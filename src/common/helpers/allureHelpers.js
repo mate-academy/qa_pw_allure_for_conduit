@@ -1,21 +1,21 @@
-import { camelToUnderscore, capitalize } from './stringHelpers';
+import { camelCaseToPhrase, capitalize } from './stringHelpers';
 
-export function parseTestTreeAttributes(fileName, logger) {
+export function parseTestTreeHierarchy(fileName, logger) {
   const testFolder = 'tests/';
 
-  let [parentSuite, suite, subSuite] = fileName
+  const attributesCamelCase = fileName
     .substring(fileName.indexOf(testFolder) + testFolder.length)
     .split('/');
 
-  let attributes = [parentSuite, suite, subSuite].map(x =>
-    camelToUnderscore(capitalize(x)),
+  let attributes = attributesCamelCase.map(attribute =>
+    capitalize(camelCaseToPhrase(attribute)),
   );
 
   if (attributes[2].includes('.spec.js')) {
     attributes = attributes.slice(0, 2);
   }
 
-  logger.debug(`Parsed test hierarchy: ${attributes}`);
+  logger.debug(`Parsed test hierarchy: ${JSON.stringify(attributes)}`);
 
   return attributes;
 }

@@ -2,7 +2,7 @@ import { test as base } from '@playwright/test';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
-import { parseTestTreeAttributes } from '../../src/common/helpers/allureHelpers';
+import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
 
 export const test = base.extend<{
   usersNumber;
@@ -42,7 +42,7 @@ export const test = base.extend<{
   },
   logger: [
     async ({}, use) => {
-      const logger = new Logger('error');
+      const logger = new Logger('debug');
 
       await use(logger);
     },
@@ -63,9 +63,9 @@ export const test = base.extend<{
   ],
   addAllureTestHierarchy: [
     async ({ logger }, use, testInfo) => {
-      const fileName: string = testInfo.file.replace('/_', '/');
+      const fileName = testInfo.file;
 
-      const [parentSuite, suite, subSuite] = parseTestTreeAttributes(
+      const [parentSuite, suite, subSuite] = parseTestTreeHierarchy(
         fileName,
         logger,
       );

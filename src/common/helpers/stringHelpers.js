@@ -6,6 +6,6 @@ export function capitalize(str) {
   return firstLetterCap + remainingLetters;
 }
 
-export function camelToUnderscore(str) {
+export function camelCaseToPhrase(str) {
   return str.replace(/([A-Z])/g, ' $1');
 }
