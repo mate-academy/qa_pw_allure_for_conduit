@@ -1,4 +1,4 @@
-# Parametrized Tests and Fixtures for Conduit
+# Allure & User Settings tests for Conduit
 
 ## Preparation
 
