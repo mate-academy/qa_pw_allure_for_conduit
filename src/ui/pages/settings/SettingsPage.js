@@ -8,6 +8,14 @@ export class SettingsPage {
     this.submitButton = page.getByRole('button', { name: 'Update Settings' });
     this.passwordField = page.getByPlaceholder('Password');
     this.emailField = page.getByPlaceholder('Email');
+    this.profilePictureUrlField = page.getByPlaceholder('URL of profile picture');
+  }
+
+  async fillProfilePictureUrl(url) {
+    await test.step(`Fill profile picture URL field with: ${url}`, async () => {
+      await this.profilePictureUrlField.clear();
+      await this.profilePictureUrlField.fill(url);
+    });
   }
 
   async fillEmail(email) {

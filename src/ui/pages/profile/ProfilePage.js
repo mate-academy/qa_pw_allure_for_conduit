@@ -4,6 +4,16 @@ export class ProfilePage {
   constructor(page) {
     this.page = page;
     this.header = page.getByRole('heading');
+    this.profilePictures = this.page.getByRole('img', { name: 'User\'s profile image' });
+  }
+
+  async assertProfilePicturesHaveUrl(url) {
+    await test.step(`Assert profile pictures have URL: ${url}`, async () => {
+      const images = await this.profilePictures.all();
+      for (const image of images) {
+        await expect(image).toHaveAttribute('src', url);
+      }
+    });
   }
 
   async waitForUrlContainsUsername(username) {
