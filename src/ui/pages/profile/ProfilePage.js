@@ -1,0 +1,20 @@
+import { expect, test } from "allure-playwright";
+
+export class ProfilePage {
+  constructor(page) {
+    this.page = page;
+    this.header = page.getByRole('heading');
+  }
+
+  async waitForUrlContainsUsername(username) {
+    await test.step(`Wait for URL to contain ${username}`, async () => {
+      await this.page.waitForURL('**/profile/' + username);
+    });
+  }
+
+  async assertHeaderHasText(text) {
+    await test.step(`Assert header has text: ${text}`, async () => {
+      await expect(this.header).toHaveText(text);
+    });
+  }
+}
