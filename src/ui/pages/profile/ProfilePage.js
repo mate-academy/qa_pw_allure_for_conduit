@@ -5,6 +5,13 @@ export class ProfilePage {
     this.page = page;
     this.header = page.getByRole('heading');
     this.profilePictures = this.page.getByRole('img', { name: 'User\'s profile image' });
+    this.profileBio = this.page.getByRole('paragraph');
+  }
+
+  async assertProfileBioHasText(bio) {
+    await test.step(`Assert profile bio has text: ${bio}`, async () => {
+      await expect(this.profileBio).toHaveText(bio);
+    });
   }
 
   async assertProfilePicturesHaveUrl(url) {

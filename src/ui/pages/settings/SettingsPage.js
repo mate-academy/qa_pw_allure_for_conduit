@@ -9,6 +9,14 @@ export class SettingsPage {
     this.passwordField = page.getByPlaceholder('Password');
     this.emailField = page.getByPlaceholder('Email');
     this.profilePictureUrlField = page.getByPlaceholder('URL of profile picture');
+    this.bioField = page.getByPlaceholder('Short bio about you');
+  }
+
+  async fillBioField(bio) {
+    await test.step(`Fill bio field with: ${bio}`, async () => {
+      await this.bioField.clear();
+      await this.bioField.fill(bio);
+    });
   }
 
   async fillProfilePictureUrl(url) {

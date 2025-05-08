@@ -13,7 +13,7 @@ test.beforeEach(async ({
   await settingsPage.open();
 });
 
-test('should allow to update profile picture', async ({
+test('should allow to add profile picture', async ({
   settingsPage,
   profilePage,
   user,
