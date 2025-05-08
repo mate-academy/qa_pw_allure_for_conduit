@@ -6,6 +6,13 @@ export class HomePage {
     this.userId = userId;
     this.yourFeedTab = page.getByText('Your Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
+    this.signUpLink = this.page.getByRole('link', { name: 'Sign up' });
+  }
+
+  async assertSignUpLinkIsVisible() {
+    await this.step(`Assert the 'Sign Up' link is visible`, async () => {
+      await expect(this.signUpLink).toBeVisible();
+    });
   }
 
   async step(title, stepToRun) {

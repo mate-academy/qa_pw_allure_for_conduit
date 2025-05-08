@@ -13,7 +13,7 @@ test.beforeEach(async ({
   await settingsPage.open();
 });
 
-test.only('should allow to add short bio', async ({
+test('should allow to add short bio', async ({
   settingsPage,
   profilePage,
   user,
@@ -26,7 +26,7 @@ test.only('should allow to add short bio', async ({
 
   await profilePage.waitForUrlContainsUsername(user.username);
   await profilePage.assertHeaderHasText(user.username);
-  await profilePage.assertProfileBioHasText();
+  await profilePage.assertProfileBioHasText(bio);
 });
 
 test.afterEach(async ({context}) => {

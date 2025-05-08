@@ -10,6 +10,13 @@ export class SettingsPage {
     this.emailField = page.getByPlaceholder('Email');
     this.profilePictureUrlField = page.getByPlaceholder('URL of profile picture');
     this.bioField = page.getByPlaceholder('Short bio about you');
+    this.logoutButton = this.page.getByRole('button', { name: 'Or click here to logout.' });
+  }
+
+  async clickLogoutButton() {
+    await test.step('Click logout button', async () => {
+      await this.logoutButton.click();
+    });
   }
 
   async fillBioField(bio) {
