@@ -3,6 +3,8 @@ import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
+import * as fs from 'fs';
+
 
 export const test = base.extend<{
   usersNumber;
@@ -13,6 +15,7 @@ export const test = base.extend<{
   logger;
   infoTestLog;
   addAllureTestHierarchy;
+  clearAllureResultsFolder;
 }>({
   usersNumber: [1, { option: true }],
   contextsNumber: [1, { option: true }],
@@ -80,4 +83,15 @@ export const test = base.extend<{
     },
     { scope: 'test', auto: true },
   ],
+  clearAllureResultsFolder: [
+    async ({logger}, use) => {
+      const allureResultsFolderPath = './allure-results';
+      await fs.promises.rm(allureResultsFolderPath, { recursive: true });
+
+      logger.info(`Allure results folder has been removed`);
+
+      await use('clearAllureResultsFolder');
+    },
+    { scope: 'worker', auto: true },
+  ]
 });

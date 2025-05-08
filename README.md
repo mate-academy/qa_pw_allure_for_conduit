@@ -23,7 +23,7 @@
     - *Add short bio from settings*
 6. Create a single new test in the auth folder, adding subfolders if required:
     - *Log out user*
-7. Create an `auto worker-scope` fixture, so that the the `allure-results` folder is deleted before before the tests are executed.
+7. Create an `auto worker-scope` fixture, so that the the `allure-results` folder is deleted before the tests are executed.
 8. Run the tests with `npx playwright test`.
 9. Generate the report using `allure serve allure-results`.
 10. Read the report. Note that new tests are automatically placed correctly within the hierarchy in the **Suites** tab.   
