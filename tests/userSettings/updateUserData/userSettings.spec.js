@@ -31,7 +31,8 @@ test('Update password from settings', async ({ user, userSettingsPage }) => {
 
 test('Update image from settings', async ({ userSettingsPage }) => {
   await userSettingsPage.open();
-  await userSettingsPage.addProfilePicture('new photo');
+  const newPhoto = faker.image.avatar();
+  await userSettingsPage.addProfilePicture(newPhoto);
   await userSettingsPage.clickUpdateButton();
 });
 
