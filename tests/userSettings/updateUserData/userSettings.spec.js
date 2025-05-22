@@ -1,19 +1,25 @@
 import { test } from '../../_fixtures/fixtures';
 import { signUpUser } from '../../../src/ui/actions/auth/signUpUser';
+import { faker } from '@faker-js/faker';
 
 test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('Update username from settings', async ({ user, userSettingsPage }) => {
+test('Update username from settings', async ({ userSettingsPage }) => {
   await userSettingsPage.open();
-  await userSettingsPage.updateUserName(user.username + 'Update Name');
+  const firstName = faker.person.firstName();
+  const lastName = faker.person.lastName();
+
+  const newUsername = `${firstName}_${lastName}`.toLowerCase();
+  await userSettingsPage.updateUserName(newUsername);
   await userSettingsPage.clickUpdateButton();
 });
 
 test('Update email from settings', async ({ user, userSettingsPage }) => {
   await userSettingsPage.open();
-  await userSettingsPage.updateEmail('Update email' + user.email);
+  const newEmail = faker.internet.email().toLowerCase();
+  await userSettingsPage.updateEmail(newEmail);
   await userSettingsPage.clickUpdateButton();
 });
 
