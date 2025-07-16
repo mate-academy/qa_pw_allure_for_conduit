@@ -18,7 +18,6 @@ export default [
     ...pluginJs.configs.recommended,
     ...playwright.configs['flat/recommended'],
     rules: {
-      'no-conditional-in-test': 'off',
       ...pluginJs.configs.recommended.rules,
       'no-unused-vars': 'error',
       'max-len': [

@@ -5,20 +5,20 @@ export class UserProfilePage {
 
   constructor(page) {
     this.page = page;
-    this.userName = page.getByAltText('User\'s profile image');
+    this.userProfileName = page.getByAltText('User\'s profile');
     this.userBIO = page.locator('//div/p');
 
   }
 
   async assertUserNameContainText(userName) {
     await test.step(`assert user name contain text ${userName}`, async () =>{
-      await expect(this.userName).toContainText(userName);
+      await expect(this.userProfileName).toContainText(userName);
     });
   }
 
   async assertUserNameIsVisible() {
     await test.step('Assert user name is visible on profile page', async () =>{
-      await expect(this.userName).toBeVisible();
+      await expect(this.userProfileName).toBeVisible();
     });
   }
 

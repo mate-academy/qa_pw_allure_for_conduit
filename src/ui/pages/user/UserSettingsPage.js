@@ -65,7 +65,7 @@ export class UserSettingsPage {
     });
   }
   async clickNewArticleLink() {
-    await this.step(`Click the 'New Article' link`, async () => {
+    await test.step(`Click the 'New Article' link`, async () => {
       await this.newArticleLink.click();
     });
   }

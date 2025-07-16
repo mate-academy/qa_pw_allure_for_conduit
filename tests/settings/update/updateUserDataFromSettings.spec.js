@@ -1,4 +1,4 @@
-import { test } from '../../_fixtures/fixtures'
+import { test } from '../../_fixtures/fixtures';
 import { generateNewUserData } from '../../../src/common/testData/generateNewUserData';
 import { signUpUser } from '../../../src/ui/actions/auth/signUpUser';
 import { UserSettingsPage } from '../../../src/ui/pages/user/UserSettingsPage';
