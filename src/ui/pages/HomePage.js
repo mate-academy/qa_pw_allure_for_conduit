@@ -6,6 +6,9 @@ export class HomePage {
     this.userId = userId;
     this.yourFeedTab = page.getByText('Your Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
+    this.userProfileLink = page.getByRole('link', {name: 'your profile image'});
+    this.settingsLink = page.getByRole('link', {name: 'Settings'});
+    this.signinLink = page.getByRole('link', {name: 'Sign up'});
   }
 
   async step(title, stepToRun) {
@@ -18,9 +21,22 @@ export class HomePage {
     });
   }
 
+  async clickSettingsLink() {
+    await this.step(`Click the 'Settings' link`, async () => {
+      await this.settingsLink.click();
+    });
+  }
+
   async assertYourFeedTabIsVisible() {
     await this.step(`Assert the 'Your Feed' tab is visible`, async () => {
       await expect(this.yourFeedTab).toBeVisible();
     });
   }
+
+  async assertSigninVisible() {
+    await this.step(`Assert the sign in link visible`, async () => {
+      await expect(this.signinLink).toBeVisible();
+    });
+  }
+
 }

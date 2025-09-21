@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "qa_pw_intro",
   "version": "1.0.0",
   "description": "",

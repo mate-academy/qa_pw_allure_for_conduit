@@ -30,6 +30,7 @@ export default [
       ],
       ...playwright.configs['flat/recommended'].rules,
       'playwright/expect-expect': 'off',
+      'playwright/no-conditional-in-test': 'off',
     },
   },
   {
