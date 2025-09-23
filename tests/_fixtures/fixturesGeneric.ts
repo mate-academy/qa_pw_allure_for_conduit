@@ -89,7 +89,7 @@ export const test = base.extend<
   ],
   clearAllureResults: [
     async ({}, use) => {
-      const allureResultsPath = path.join(__dirname, '../../../allure-results');
+      const allureResultsPath = path.join(__dirname, '../../allure-results');
 
       if (fs.existsSync(allureResultsPath)) {
         fs.rmSync(allureResultsPath, { recursive: true, force: true });

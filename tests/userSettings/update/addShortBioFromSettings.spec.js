@@ -20,7 +20,6 @@ test('Add short bio from settings', async ({
   await settingsPage.fillBioField(shortBio);
   await settingsPage.clickUpdateSettingsButton();
 
-  await homePage.clickSettingsLink();
   await page.waitForURL(`**/profile/${user.username}`);
 
   await expect(page.getByText(shortBio)).toBeVisible();
