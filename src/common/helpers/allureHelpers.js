@@ -1,10 +1,13 @@
 import { camelCaseToPhrase, capitalize } from './stringHelpers';
 
 export function parseTestTreeHierarchy(fileName, logger) {
+  //console.log(fileName);
+  const normalizedFileName = fileName.replace(/\\/g, '/');
+  //console.log(normalizedFileName);
   const testFolder = 'tests/';
 
-  const attributesCamelCase = fileName
-    .substring(fileName.indexOf(testFolder) + testFolder.length)
+  const attributesCamelCase = normalizedFileName
+    .substring(normalizedFileName.indexOf(testFolder) + testFolder.length)
     .split('/');
 
   let attributes = attributesCamelCase.map(attribute =>
