@@ -5,9 +5,11 @@ export function generateNewUserData(logger = null) {
   const lastName = faker.person.lastName();
 
   const user = {
-    username: `${firstName}_${lastName}`.replaceAll(`'`).toLowerCase(),
-    email: `${firstName}_${faker.internet.email()}`.toLowerCase(),
+    username: `${firstName}_${lastName}`.replaceAll(`'`, '').toLowerCase(),
+    email: faker.internet.email().toLowerCase(),
     password: faker.internet.password(),
+    bio: faker.lorem.sentences(2),
+    avatar: faker.image.avatar(),
   };
 
   if (logger) {
