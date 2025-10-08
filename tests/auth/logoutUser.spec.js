@@ -1,16 +1,19 @@
-import { test as baseTest, expect } from '@playwright/test';
-import { userFixture } from '../_fixtures/fixturesGeneric';
+import { test, expect } from '../_fixtures/fixturesGeneric';
+import { SignInPage } from '../../src/ui/pages/auth/SignInPage';
+import { HomePage } from '../../src/ui/pages/HomePage';
 
-const test = baseTest.extend({
-  user: userFixture,
-});
+test('Log out user', async ({ page, user }) => {
+  // 1. Sign up or log in
+  const signInPage = new SignInPage(page);
+  await signInPage.goto();
+  await signInPage.signIn(user.username, user.password);
 
-test('Log out user', async ({ user }) => {
-  // Simulate user logged in
-  let isLoggedIn = true;
+  const homePage = new HomePage(page);
+  await homePage.waitForLoad();
 
-  // Log out logic
-  isLoggedIn = false;
+  // 2. Perform logout via UI
+  await homePage.logout();
 
-  expect(isLoggedIn).toBeFalsy();
+  // 3. Assert user is logged out (login button visible)
+  await expect(homePage.loginButton).toBeVisible();
 });
