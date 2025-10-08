@@ -3,19 +3,26 @@ import { camelCaseToPhrase, capitalize } from './stringHelpers';
 export function parseTestTreeHierarchy(fileName, logger) {
   const testFolder = 'tests/';
 
-  const attributesCamelCase = fileName
-    .substring(fileName.indexOf(testFolder) + testFolder.length)
-    .split('/');
+  // Get relative path from tests/ folder
+  const relativePath = fileName.substring(fileName.indexOf(testFolder) + testFolder.length);
+  const attributesCamelCase = relativePath.split('/');
 
-  let attributes = attributesCamelCase.map(attribute =>
-    capitalize(camelCaseToPhrase(attribute)),
+  // Convert to readable names
+  let attributes = attributesCamelCase.map(attr =>
+    capitalize(camelCaseToPhrase(attr.replace('.spec.ts', '').replace('.spec.js', '')))
   );
 
-  if (attributes[2].includes('.spec.js')) {
-    attributes = attributes.slice(0, 2);
+  // Remove file name if it's the last element
+  if (attributes.length > 0 && (attributes[attributes.length - 1].endsWith('.spec.js') || attributes[attributes.length - 1].endsWith('.spec.ts'))) {
+    attributes.pop();
   }
 
   logger.debug(`Parsed test hierarchy: ${JSON.stringify(attributes)}`);
 
-  return attributes;
+  // Return in expected fixture format: [parentSuite, suite, subSuite?]
+  const parentSuite = attributes[0] || '';
+  const suite = attributes[1] || '';
+  const subSuite = attributes.length > 2 ? attributes.slice(2).join(' / ') : undefined;
+
+  return [parentSuite, suite, subSuite];
 }
