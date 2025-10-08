@@ -3,39 +3,46 @@ import fs from 'fs';
 import path from 'path';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
 
+// Worker-scoped auto-cleanup for allure-results
+export const cleanupAllureResults = base.extend({
+  cleanupAllureResults: [
+    async ({}, use) => {
+      const resultsPath = path.resolve(__dirname, '../../allure-results');
+      if (fs.existsSync(resultsPath)) {
+        fs.rmSync(resultsPath, { recursive: true, force: true });
+      }
+      await use();
+    },
+    { scope: 'worker', auto: true }, // run automatically once per worker
+  ],
+});
+
+// Allure test hierarchy fixture
+export const addAllureTestHierarchy = base.extend({
+  addAllureTestHierarchy: [
+    async ({ testInfo }, use) => {
+      if (!testInfo) {
+        return await use(['', '', '']); // early return if testInfo missing
+      }
+
+      const hierarchy = parseTestTreeHierarchy(testInfo.file, console);
+      await use(hierarchy);
+    },
+    { auto: true }, // always run
+  ],
+});
+
+// User fixture with realistic default credentials
 export const test = base.extend({
   user: async ({}, use) => {
     const user = {
-      username: '',
-      email: '',
-      password: '',
-      bio: '',
-      profilePicture: '',
+      username: `user_${Date.now()}`,
+      email: `user_${Date.now()}@example.com`,
+      password: 'SuperSecret123!',
+      bio: 'Hello, I am a test user!',
+      profilePicture: 'https://example.com/profile.jpg',
     };
     await use(user);
-  },
-
-  logger: async ({}, use) => {
-    await use(console);
-  },
-
-  // Worker-scoped fixture to clean allure-results
-  cleanupAllureResults: [async ({}, use) => {
-    const resultsPath = path.resolve('allure-results');
-    if (fs.existsSync(resultsPath)) {
-      await fs.promises.rm(resultsPath, { recursive: true, force: true });
-      console.log('✅ Deleted existing allure-results folder');
-    }
-    await use(null);
-  }, { scope: 'worker' }],
-
-  // Fixture to add parentSuite/suite/subSuite for Allure
-  addAllureTestHierarchy: async ({}, use, testInfo) => {
-    const hierarchy = parseTestTreeHierarchy(testInfo.file);
-    testInfo.annotations.push({ type: 'parentSuite', description: hierarchy[0] || '' });
-    testInfo.annotations.push({ type: 'suite', description: hierarchy[1] || '' });
-    testInfo.annotations.push({ type: 'subSuite', description: hierarchy[2] || '' });
-    await use(null);
   },
 });
 

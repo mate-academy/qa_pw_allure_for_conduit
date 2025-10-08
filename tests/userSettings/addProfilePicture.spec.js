@@ -1,14 +1,20 @@
 import { test, expect } from '../_fixtures/fixturesGeneric';
-import { UserSettingsPage } from '../../src/ui/pages/user/UserSettingsPage';
+import { SettingsPage } from '../../src/ui/pages/SettingsPage';
 
 test('Add profile picture URL from settings', async ({ page, user }) => {
-  const settingsPage = new UserSettingsPage(page);
-  await settingsPage.goto();
+  // Sign in
+  await page.goto('/login');
+  await page.fill('input[name="email"]', user.email);
+  await page.fill('input[name="password"]', user.password);
+  await page.click('button[type="submit"]');
+  await page.waitForURL('/');
 
-  const profilePictureUrl = 'https://example.com/profile.jpg';
-  await settingsPage.updateProfilePicture(profilePictureUrl);
+  const settings = new SettingsPage(page);
+  await settings.goto();
 
-  // Assert profile picture updated
-  const currentUrl = await settingsPage.getProfilePictureUrl();
-  expect(currentUrl).toBe(profilePictureUrl);
+  const profilePicture = 'https://example.com/profile.jpg';
+  await settings.updateProfilePicture(profilePicture);
+
+  const currentPicture = await settings.getProfilePicture();
+  expect(currentPicture).toBe(profilePicture);
 });

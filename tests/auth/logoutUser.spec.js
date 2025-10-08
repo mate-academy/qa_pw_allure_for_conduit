@@ -1,19 +1,17 @@
 import { test, expect } from '../_fixtures/fixturesGeneric';
-import { SignInPage } from '../../src/ui/pages/auth/SignInPage';
-import { HomePage } from '../../src/ui/pages/HomePage';
 
 test('Log out user', async ({ page, user }) => {
-  // 1. Sign up or log in
-  const signInPage = new SignInPage(page);
-  await signInPage.goto();
-  await signInPage.signIn(user.username, user.password);
+  // Sign in first
+  await page.goto('/login');
+  await page.fill('input[name="email"]', user.email);
+  await page.fill('input[name="password"]', user.password);
+  await page.click('button[type="submit"]');
+  await page.waitForURL('/');
 
-  const homePage = new HomePage(page);
-  await homePage.waitForLoad();
+  // Perform logout
+  await page.click('text=Logout');
+  await page.waitForURL('/login');
 
-  // 2. Perform logout via UI
-  await homePage.logout();
-
-  // 3. Assert user is logged out (login button visible)
-  await expect(homePage.loginButton).toBeVisible();
+  // Assert logged out
+  expect(await page.isVisible('text=Login')).toBeTruthy();
 });

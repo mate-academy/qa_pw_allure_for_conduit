@@ -1,14 +1,19 @@
 import { test, expect } from '../_fixtures/fixturesGeneric';
-import { UserSettingsPage } from '../../src/ui/pages/user/UserSettingsPage';
+import { SettingsPage } from '../../src/ui/pages/SettingsPage';
 
 test('Add short bio from settings', async ({ page, user }) => {
-  const settingsPage = new UserSettingsPage(page);
-  await settingsPage.goto();
+  await page.goto('/login');
+  await page.fill('input[name="email"]', user.email);
+  await page.fill('input[name="password"]', user.password);
+  await page.click('button[type="submit"]');
+  await page.waitForURL('/');
+
+  const settings = new SettingsPage(page);
+  await settings.goto();
 
   const shortBio = 'Hello, I am a test user!';
-  await settingsPage.updateBio(shortBio);
+  await settings.updateBio(shortBio);
 
-  // Assert bio updated
-  const currentBio = await settingsPage.getBio();
+  const currentBio = await settings.getBio();
   expect(currentBio).toBe(shortBio);
 });
