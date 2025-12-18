@@ -1,53 +1,48 @@
-import { test as base } from '@playwright/test';
+import { test as base, expect, Page } from '@playwright/test';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
+import fs from 'fs-extra';
 
 export const test = base.extend<
   {
-    usersNumber;
-    contextsNumber;
-    pages;
-    user;
-    users;
-    infoTestLog;
-    addAllureTestHierarchy;
+    usersNumber: number;
+    contextsNumber: number;
+    pages: Page[];
+    user: any;
+    users: any[];
+    infoTestLog: string;
+    addAllureTestHierarchy: string;
   },
   {
-    logger;
+    logger: Logger;
   }
 >({
   usersNumber: [1, { option: true }],
   contextsNumber: [1, { option: true }],
   pages: async ({ browser, contextsNumber }, use) => {
-    let pages = Array(contextsNumber);
-
+    const pages: Page[] = [];
     for (let i = 0; i < contextsNumber; i++) {
       const context = await browser.newContext();
-
       pages[i] = await context.newPage();
     }
     await use(pages);
   },
   user: async ({ logger }, use) => {
     const user = generateNewUserData(logger);
-
     await use(user);
   },
   users: async ({ logger, usersNumber }, use) => {
-    const users = Array(usersNumber);
-
+    const users = [];
     for (let i = 0; i < usersNumber; i++) {
       users[i] = generateNewUserData(logger);
     }
-
     await use(users);
   },
   logger: [
     async ({}, use) => {
       const logger = new Logger('error');
-
       await use(logger);
     },
     { scope: 'worker' },
@@ -56,11 +51,8 @@ export const test = base.extend<
     async ({ logger }, use, testInfo) => {
       const indexOfTestSubfolderStart = testInfo.file.indexOf('/tests') + 7;
       const fileName = testInfo.file.substring(indexOfTestSubfolderStart);
-
       logger.info(`Test started: ${fileName}`);
-
       await use('infoTestLog');
-
       logger.info(`Test completed: ${fileName}`);
     },
     { scope: 'test', auto: true },
@@ -68,7 +60,6 @@ export const test = base.extend<
   addAllureTestHierarchy: [
     async ({ logger }, use, testInfo) => {
       const fileName = testInfo.file;
-
       const [parentSuite, suite, subSuite] = parseTestTreeHierarchy(
         fileName,
         logger,
@@ -80,8 +71,19 @@ export const test = base.extend<
         await allure.subSuite(subSuite);
       }
 
-      await use('addAllureTestHierarhy');
+      await use('addAllureTestHierarchy');
     },
     { scope: 'test', auto: true },
   ],
+  // Auto-clean allure-results before tests
+  clearAllureResults: [
+    async ({}, use) => {
+      await fs.remove('allure-results');
+      await use();
+    },
+    { scope: 'worker', auto: true },
+  ],
 });
+
+// Eksport expect, żeby działał w testach
+export { expect };
