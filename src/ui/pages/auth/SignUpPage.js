@@ -59,4 +59,10 @@ export class SignUpPage {
       await expect(this.errorMessage).toContainText(messageText);
     });
   }
+
+  async assertSignUpButtonIsVisible() {
+    await this.step(`Assert the 'Sign up' button is visible`, async () => {
+      await expect(this.signUpButton).toBeVisible();
+    });
+  }
 }

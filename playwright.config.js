@@ -28,8 +28,11 @@ export default defineConfig({
     baseURL: 'https://conduit.mate.academy',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'retain-on-failure',
+    trace: 'off',
   },
+  
+  /* Global timeout for each test */
+  timeout: 60000,
 
   /* Configure projects for major browsers */
   projects: [
