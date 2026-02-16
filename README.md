@@ -28,7 +28,7 @@
 9. Generate the report using `allure serve allure-results`.
 10. Read the report. Note that new tests are automatically placed correctly within the hierarchy in the **Suites** tab.   
 
-## Task Reporting
+## Task Reporting   
 
 1. Add and commit all your updates.
 2. Push the code to the origin.

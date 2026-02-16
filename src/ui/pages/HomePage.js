@@ -6,6 +6,7 @@ export class HomePage {
     this.userId = userId;
     this.yourFeedTab = page.getByText('Your Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
+    this.settingsButton = page.getByRole('link', { name: 'Settings' });
   }
 
   async step(title, stepToRun) {
@@ -15,6 +16,12 @@ export class HomePage {
   async clickNewArticleLink() {
     await this.step(`Click the 'New Article' link`, async () => {
       await this.newArticleLink.click();
+    });
+  }
+
+  async clickSettingsButton() {
+    await this.step(`Click the 'Settings' button`, async () => {
+      await this.settingsButton.click();
     });
   }
 
