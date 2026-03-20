@@ -23,7 +23,7 @@ test('Update username', async ({
   const newUsername = faker.internet.username();
   await settingsPage.fillUsernameField(newUsername);
   await settingsPage.clickUpdateSettingsButton();
-  await settingsPage.clickUsernameLink(users[0].username);
+  await settingsPage.clickUsernameLink(newUsername);
 
   const profilePage = new ProfilePage(pages[0], 1);
   await profilePage.assertUsernameIsVisible(newUsername);
@@ -42,9 +42,6 @@ test('Update email', async ({
   const newEmail = faker.internet.email();
   await settingsPage.fillEmailField(newEmail);
   await settingsPage.clickUpdateSettingsButton();
-  await settingsPage.clickUsernameLink(users[0].username);
-
-  await homePage.clickSettingsLink();
   await settingsPage.assertEmailHasCorrectText(newEmail);
 })
 
@@ -84,9 +81,6 @@ test('Update image url', async ({
   const newUrl = faker.internet.url();
   await settingsPage.fillImageUrlField(newUrl);
   await settingsPage.clickUpdateSettingsButton();
-  await settingsPage.clickUsernameLink(users[0].username);
-
-  await homePage.clickSettingsLink();
   await settingsPage.assertImageUrlFieldHasCorrectValue(newUrl);
 })
 

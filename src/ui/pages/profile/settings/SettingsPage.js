@@ -74,7 +74,7 @@ export class SettingsPage {
     await this.step(`Click 'Username link' button`, async() => {
       
       await this.page.getByRole('link', { name: username }).click();
-      await this.page.reload({waitUntil: 'domcontentloaded'});
+      await this.page.reload({waitUntil: 'commit'});
     })
   }
 
