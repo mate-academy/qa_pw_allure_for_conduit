@@ -16,6 +16,7 @@ export const test = base.extend<
   },
   {
     logger;
+    removeAllureResultsFolder;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -84,4 +85,17 @@ export const test = base.extend<
     },
     { scope: 'test', auto: true },
   ],
+  removeAllureResultsFolder: [
+    async ({}, use) => {
+      const fs = require('fs');
+      const path = 'allure-results';
+
+      if (fs.existsSync(path)) {
+        fs.rmSync(path, {recursive: true});
+      }
+
+      await use('removeAllureResultsFolder');
+
+    }, {scope: 'worker', auto: true},
+  ]
 });
