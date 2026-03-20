@@ -30,6 +30,7 @@ export class SettingsPage {
 
   async fillEmailField(email) {
     await this.step(`Fill email field with ${email}`, async() => {
+      await this.emailField.clear();
       await this.emailField.fill(email);
     })
   }
@@ -54,6 +55,7 @@ export class SettingsPage {
 
   async fillImageUrlField(url) {
     await this.step(`Fill image url field with ${url}`, async() => {
+      await this.imageUrlField.clear();
       await this.imageUrlField.fill(url);
     })
   }
@@ -66,6 +68,7 @@ export class SettingsPage {
 
   async fillShortBioField(text) {
     await this.step(`Fill short bio field with ${text}`, async() => {
+      await this.shortBioField.clear();
       await this.shortBioField.fill(text);
     })
   }
