@@ -5,15 +5,21 @@ export function parseTestTreeHierarchy(fileName, logger) {
 
   const attributesCamelCase = fileName
     .substring(fileName.indexOf(testFolder) + testFolder.length)
-    .split('/');
+    .split(/[\\/]/);
 
   let attributes = attributesCamelCase.map(attribute =>
     capitalize(camelCaseToPhrase(attribute)),
   );
 
-  if (attributes[2].includes('.spec.js')) {
-    attributes = attributes.slice(0, 2);
+  const lastAttribute = attributes[attributes.length - 1];
+
+  if (lastAttribute?.includes('.spec.js')) {
+    if (attributes.length === 1) {
+      attributes[0] = attributes[0].replace('.spec.js', ''); 
+    } else {
+      attributes = attributes.slice(0, -1); 
   }
+}
 
   logger.debug(`Parsed test hierarchy: ${JSON.stringify(attributes)}`);
 
