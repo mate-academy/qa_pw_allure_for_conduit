@@ -11,7 +11,7 @@
 
 ## Task
 
-1. Review the `addAllureTestHierarchy` fixture in the `tests/_fixtures/fixturesGeneric.ts` file to ensure you understand how it works.
+1. Review the `addAllureTestHierarchy` fixture in the `tests/_fixtures/fixturesGeneric.ts` file to ensure you understand how it works. 
 2. Run the tests with `npx playwright test`.
 3. Generate a report using `allure serve allure-results`.
 4. Read the report, looking at the hierarchy in the **Suites** tab. Note that all the `parentSuite` and `suite` are automatically added to the tests with the help of the `addAllureTestHierarhy` fixture.
