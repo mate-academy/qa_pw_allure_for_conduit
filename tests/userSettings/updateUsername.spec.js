@@ -6,7 +6,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('Update username from setting', async ({ user, settingsPage }) => {
+test('Update username from settings', async ({ user, settingsPage }) => {
   const newUsername = faker.internet.username();
 
   await settingsPage.clickSettingsTab();
