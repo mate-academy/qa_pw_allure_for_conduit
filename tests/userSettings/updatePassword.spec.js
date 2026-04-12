@@ -6,7 +6,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User updates password from settings', async ({
+test('Update password from settings', async ({
   user,
   settingsPage,
   signInPage,

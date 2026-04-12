@@ -6,14 +6,14 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User adds profile picture URL from settings', async ({
+test('Add profile picture URL from settings', async ({
   settingsPage,
   profilePage,
 }) => {
   const avatarUrl = faker.image.avatar();
 
   await settingsPage.clickSettingsTab();
-  await settingsPage.fillProfilePictre(avatarUrl);
+  await settingsPage.fillProfilePicture(avatarUrl);
   await settingsPage.clickUpdateSettingsButton();
   await profilePage.assertPictureAdded();
 });

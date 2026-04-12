@@ -6,10 +6,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User adds short bio from settings', async ({
-  settingsPage,
-  profilePage,
-}) => {
+test('Add short bio from settings', async ({ settingsPage, profilePage }) => {
   const shortBio = faker.person.bio();
 
   await settingsPage.clickSettingsTab();

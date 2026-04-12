@@ -5,7 +5,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User Logs out', async ({ homePage, settingsPage }) => {
+test('Log out user', async ({ homePage, settingsPage }) => {
   await settingsPage.clickSettingsTab();
   await settingsPage.clickLogOutButton();
 

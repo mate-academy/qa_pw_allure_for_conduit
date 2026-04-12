@@ -58,7 +58,7 @@ export class SettingsPage {
     });
   }
 
-  async fillProfilePictre(url) {
+  async fillProfilePicture(url) {
     await this.step(`Fill the 'url' field`, async () => {
       await this.profilePictureField.fill(url);
     });

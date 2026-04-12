@@ -4,7 +4,7 @@ export class HomePage {
   constructor(page, userId = 0) {
     this.page = page;
     this.userId = userId;
-    this.conduitPageyourFeedTab = page.getByText('Your Feed');
+    this.yourFeedTab = page.getByText('Your Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
     this.conduitPage = page.getByRole('heading', { name: 'conduit' });
   }
@@ -27,7 +27,7 @@ export class HomePage {
 
   async assertConduitPageVisible() {
     await this.step(`Assert the 'Conduit' page is visible`, async () => {
-      await expect(this.yourFeedTab).toBeVisible();
+      await expect(this.conduitPage).toBeVisible();
     });
   }
 }

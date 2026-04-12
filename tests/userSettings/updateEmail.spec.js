@@ -6,7 +6,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User updates email from settings', async ({
+test('Update email from settings', async ({
   user,
   settingsPage,
   signInPage,
@@ -19,7 +19,7 @@ test('User updates email from settings', async ({
   await settingsPage.assertProfilePage(user.username);
 
   await signInPage.open();
-  await signInPage.fillEmailField(user.newEmail);
+  await signInPage.fillEmailField(newEmail);
   await signInPage.fillPasswordField(user.password);
   await signInPage.clickSignInButton();
   await settingsPage.assertProfilePage(user.username);

@@ -2,6 +2,8 @@ import { test as base } from '@playwright/test';
 import { SignUpPage } from '../../src/ui/pages/auth/SignUpPage';
 import { SignInPage } from '../../src/ui/pages/auth/SignInPage';
 import { HomePage } from '../../src/ui/pages/HomePage';
+import { ProfilePage } from '../../src/ui/pages/ProfilePage';
+import { SettingsPage } from '../../src/ui/pages/SettingsPage';
 
 export const test = base.extend<{
   signUpUsers;
