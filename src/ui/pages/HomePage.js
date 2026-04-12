@@ -4,8 +4,9 @@ export class HomePage {
   constructor(page, userId = 0) {
     this.page = page;
     this.userId = userId;
-    this.yourFeedTab = page.getByText('Your Feed');
+    this.conduitPageyourFeedTab = page.getByText('Your Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
+    this.conduitPage = page.getByRole('heading', { name: 'conduit' });
   }
 
   async step(title, stepToRun) {
@@ -20,6 +21,12 @@ export class HomePage {
 
   async assertYourFeedTabIsVisible() {
     await this.step(`Assert the 'Your Feed' tab is visible`, async () => {
+      await expect(this.yourFeedTab).toBeVisible();
+    });
+  }
+
+  async assertConduitPageVisible() {
+    await this.step(`Assert the 'Conduit' page is visible`, async () => {
       await expect(this.yourFeedTab).toBeVisible();
     });
   }

@@ -63,7 +63,7 @@ export const test = base.extend<
 
       logger.info(`Test completed: ${fileName}`);
     },
-    { scope: 'test', auto: true },
+    { scope: 'worker', auto: true },
   ],
   addAllureTestHierarchy: [
     async ({ logger }, use, testInfo) => {
@@ -82,6 +82,6 @@ export const test = base.extend<
 
       await use('addAllureTestHierarhy');
     },
-    { scope: 'test', auto: true },
+    { scope: 'worker', auto: true },
   ],
 });
