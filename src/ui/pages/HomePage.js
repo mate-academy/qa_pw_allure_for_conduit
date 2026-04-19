@@ -12,6 +12,12 @@ export class HomePage {
     return await testStep(title, stepToRun, this.userId);
   }
 
+  async open() {
+    await this.step(`Open 'Home' page`, async () => {
+      await this.page.goto('/');
+    });
+  }
+
   async clickNewArticleLink() {
     await this.step(`Click the 'New Article' link`, async () => {
       await this.newArticleLink.click();
@@ -21,6 +27,12 @@ export class HomePage {
   async assertYourFeedTabIsVisible() {
     await this.step(`Assert the 'Your Feed' tab is visible`, async () => {
       await expect(this.yourFeedTab).toBeVisible();
+    });
+  }
+
+  async assertYourFeedTabIsHidden() {
+    await this.step(`Assert the 'Your Feed' tab is hidden`, async () => {
+      await expect(this.yourFeedTab).toBeHidden();
     });
   }
 }

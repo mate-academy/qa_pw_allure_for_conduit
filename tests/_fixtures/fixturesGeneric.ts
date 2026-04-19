@@ -1,21 +1,26 @@
-import { test as base } from '@playwright/test';
+import { Page, test as base } from '@playwright/test';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
+import fs from 'fs';
+import path from 'path';
+
+type UserData = { username: string; email: string; password: string };
 
 export const test = base.extend<
   {
-    usersNumber;
-    contextsNumber;
-    pages;
-    user;
-    users;
-    infoTestLog;
-    addAllureTestHierarchy;
+    usersNumber: number;
+    contextsNumber: number;
+    pages: Page[];
+    user: UserData;
+    users: UserData[];
+    infoTestLog: string;
+    addAllureTestHierarchy: string;
   },
   {
-    logger;
+    logger: Logger;
+    cleanAllureResults: void;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -44,6 +49,17 @@ export const test = base.extend<
 
     await use(users);
   },
+  cleanAllureResults: [
+    async ({}, use) => {
+      fs.rmSync(path.join(process.cwd(), 'allure-results'), {
+        recursive: true,
+        force: true,
+      });
+
+      await use();
+    },
+    { scope: 'worker', auto: true },
+  ],
   logger: [
     async ({}, use) => {
       const logger = new Logger('error');
@@ -80,7 +96,7 @@ export const test = base.extend<
         await allure.subSuite(subSuite);
       }
 
-      await use('addAllureTestHierarhy');
+      await use('addAllureTestHierarchy');
     },
     { scope: 'test', auto: true },
   ],
