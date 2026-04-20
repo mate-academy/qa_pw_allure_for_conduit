@@ -6,7 +6,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User should be able to update profile picture', async ({ page }) => {
+test('Add profile picture URL from settings', async ({ page }) => {
   const settingsPage = new SettingsPage(page);
   const link = 'https://picsum.photos/200/300';
 

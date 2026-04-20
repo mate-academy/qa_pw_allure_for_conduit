@@ -7,7 +7,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User should be able to update bio', async ({ page }) => {
+test('Add short bio from settings', async ({ page }) => {
   const settingsPage = new SettingsPage(page);
   const bio = faker.lorem.words(5);
 

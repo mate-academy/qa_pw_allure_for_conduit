@@ -7,7 +7,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User should be able to log out', async ({ page }) => {
+test('Log out user', async ({ page }) => {
   const settingsPage = new SettingsPage(page);
   const homePage = new HomePage(page);
 

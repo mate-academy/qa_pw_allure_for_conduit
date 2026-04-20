@@ -13,7 +13,7 @@ test.beforeEach(async ({ page, user }) => {
   email = user.email;
 });
 
-test('User should be able to update password', async ({ page }) => {
+test('Update password from settings', async ({ page }) => {
   const settingsPage = new SettingsPage(page);
   const signInPage = new SignInPage(page);
   const homePage = new HomePage(page);

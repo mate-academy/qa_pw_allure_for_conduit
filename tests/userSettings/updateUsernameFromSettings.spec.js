@@ -8,7 +8,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test('User should be able to update username', async ({ page }) => {
+test('Update username from settings', async ({ page }) => {
   const settingsPage = new SettingsPage(page);
   const profilePage = new ProfilePage(page);
   const num = faker.number.int({ min: 1, max: 999 });
