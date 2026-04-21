@@ -16,6 +16,7 @@ export const test = base.extend<
   },
   {
     logger;
+    deleteAllureResults;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -51,6 +52,19 @@ export const test = base.extend<
       await use(logger);
     },
     { scope: 'worker' },
+  ],
+  deleteAllureResults: [
+    async ({}, use) => {
+      const path = require('path');
+      const rootPath = process.cwd(); 
+      const folderPath = path.join(rootPath, 'allure-results');
+
+      const fs = require('fs');
+      fs.rmSync(folderPath, { recursive: true, force: true });
+
+      await use('deleteAllureResults');
+    },
+    { scope: 'worker', auto: true },
   ],
   infoTestLog: [
     async ({ logger }, use, testInfo) => {
