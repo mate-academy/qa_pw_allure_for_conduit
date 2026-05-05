@@ -8,6 +8,8 @@ export function generateNewUserData(logger = null) {
     username: `${firstName}_${lastName}`.replaceAll(`'`).toLowerCase(),
     email: `${firstName}_${faker.internet.email()}`.toLowerCase(),
     password: faker.internet.password(),
+    bio: faker.person.bio(),
+    image: faker.image.avatar(),
   };
 
   if (logger) {

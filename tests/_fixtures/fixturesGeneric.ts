@@ -3,6 +3,8 @@ import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
+import fs from 'fs';
+import path from 'path';
 
 export const test = base.extend<
   {
@@ -13,6 +15,7 @@ export const test = base.extend<
     users;
     infoTestLog;
     addAllureTestHierarchy;
+    removeAllureResults;
   },
   {
     logger;
@@ -83,5 +86,20 @@ export const test = base.extend<
       await use('addAllureTestHierarhy');
     },
     { scope: 'test', auto: true },
+  ],
+  removeAllureResults: [
+    async ({}, use) => {
+      const allureResultsPath = path.resolve(__dirname, '../../allure-results');
+
+      if (fs.existsSync(allureResultsPath)) {
+        // Видаляємо вміст папки, щоб не видаляти саму папку,
+        // яку Allure може очікувати як існуючу
+        fs.rmSync(allureResultsPath, { recursive: true, force: true });
+        console.log('--- Allure results cleared ---');
+      }
+
+      await use();
+    },
+    { scope: 'worker', auto: true },
   ],
 });
