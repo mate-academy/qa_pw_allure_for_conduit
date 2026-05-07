@@ -10,7 +10,7 @@ test(`Add profile picture URL from settings`, async ({
   userSettingsPage,
   user,
 }) => {
-  const profilePictureUrl = faker.internet.protocol();
+  const profilePictureUrl = faker.image.url();
 
   await userSettingsPage.open();
   await userSettingsPage.fillProfilePictureUrlField(profilePictureUrl);

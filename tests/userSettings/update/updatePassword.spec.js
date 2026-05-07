@@ -6,7 +6,7 @@ test.beforeEach(async ({ page, user }) => {
   await signUpUser(page, user);
 });
 
-test(`Update email from settings`, async ({ userSettingsPage, user }) => {
+test(`Update password from settings`, async ({ userSettingsPage, user }) => {
   const newPassword = faker.internet.password();
 
   await userSettingsPage.open();
