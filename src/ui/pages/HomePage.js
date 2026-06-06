@@ -6,21 +6,37 @@ export class HomePage {
     this.userId = userId;
     this.yourFeedTab = page.getByText('Your Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
+    this.globalFeed = page.getByText('Global Feed');
   }
-
-  async step(title, stepToRun) {
+async step(title, stepToRun) {
     return await testStep(title, stepToRun, this.userId);
   }
 
-  async clickNewArticleLink() {
-    await this.step(`Click the 'New Article' link`, async () => {
-      await this.newArticleLink.click();
+  async open() {
+    await this.step(`Open 'Your Feed' page`, async () => {
+      await this.page.goto('/');
     });
   }
 
-  async assertYourFeedTabIsVisible() {
-    await this.step(`Assert the 'Your Feed' tab is visible`, async () => {
-      await expect(this.yourFeedTab).toBeVisible();
+  async assertYourFeedTabIsVisible(){
+    await this.step(`Your Feed Tab is visible`, async() => {
+    await expect (this.yourFeedTab).toContainText('Your Feed');
+
+    });
+  }
+
+  async assertGlobalFeedTabIsVisible(){
+    await this.step(`Global Feed Tab is visible`, async() => {
+    await expect (this.globalFeed).toContainText('Global Feed');
+    });
+  }
+
+
+  async clickNewArticleLink(){
+    await this.step(`Click New Article Link`, async() => {
+    await this.newArticleLink.click();
+
     });
   }
 }
+
