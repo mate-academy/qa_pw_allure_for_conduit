@@ -1,5 +1,8 @@
 import { faker } from '@faker-js/faker';
 
+/**
+ * @param {import('../logger/Logger').Logger | null} [logger]
+ */
 export function generateNewUserData(logger = null) {
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
@@ -8,6 +11,8 @@ export function generateNewUserData(logger = null) {
     username: `${firstName}_${lastName}`.replaceAll(`'`).toLowerCase(),
     email: `${firstName}_${faker.internet.email()}`.toLowerCase(),
     password: faker.internet.password(),
+    bio: faker.lorem.sentence(),
+    profilePictureUrl: faker.image.avatar(),
   };
 
   if (logger) {

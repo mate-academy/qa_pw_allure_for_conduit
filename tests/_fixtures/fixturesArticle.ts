@@ -3,11 +3,18 @@ import { generateNewArticleData } from '../../src/common/testData/generateNewArt
 import { CreateArticlePage } from '../../src/ui/pages/article/CreateArticlePage';
 import { ViewArticlePage } from '../../src/ui/pages/article/ViewArticlePage';
 
+interface Article {
+  title: string;
+  description: string;
+  text: string;
+  tags: string[];
+}
+
 export const test = base.extend<{
-  articleWithoutTags;
-  articleWithOneTag;
-  createArticlePage;
-  viewArticlePage;
+  articleWithoutTags: Article;
+  articleWithOneTag: Article;
+  createArticlePage: CreateArticlePage;
+  viewArticlePage: ViewArticlePage;
 }>({
   articleWithoutTags: async ({ logger }, use) => {
     const article = generateNewArticleData(logger);
