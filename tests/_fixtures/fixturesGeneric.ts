@@ -1,4 +1,6 @@
 import { test as base } from '@playwright/test';
+import fs from 'fs';
+import path from 'path';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
@@ -16,6 +18,7 @@ export const test = base.extend<
   },
   {
     logger;
+    cleanAllureResults: void;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -51,6 +54,18 @@ export const test = base.extend<
       await use(logger);
     },
     { scope: 'worker' },
+  ],
+  cleanAllureResults: [
+    async ({}, use) => {
+      const allureResultsPath = path.resolve('allure-results');
+
+      if (fs.existsSync(allureResultsPath)) {
+        fs.rmSync(allureResultsPath, { recursive: true, force: true });
+      }
+
+      await use();
+    },
+    { scope: 'worker', auto: true },
   ],
   infoTestLog: [
     async ({ logger }, use, testInfo) => {
