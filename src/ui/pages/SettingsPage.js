@@ -1,4 +1,3 @@
-import { th } from '@faker-js/faker';
 import { expect, testStep } from '../../common/helpers/pw';
 
 export class SettingsPage {
