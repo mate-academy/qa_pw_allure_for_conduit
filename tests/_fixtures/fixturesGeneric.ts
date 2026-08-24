@@ -1,3 +1,5 @@
+import 'allure-playwright/autoconfig';
+import * as fs from 'fs';
 import { test as base } from '@playwright/test';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
@@ -16,6 +18,7 @@ export const test = base.extend<
   },
   {
     logger;
+    cleanAllureResults;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -52,10 +55,19 @@ export const test = base.extend<
     },
     { scope: 'worker' },
   ],
+  cleanAllureResults: [
+    async ({}, use) => {
+      fs.rmSync('allure-results', { recursive: true, force: true });
+
+      await use('cleanAllureResults');
+    },
+    { scope: 'worker', auto: true },
+  ],
   infoTestLog: [
     async ({ logger }, use, testInfo) => {
-      const indexOfTestSubfolderStart = testInfo.file.indexOf('/tests') + 7;
-      const fileName = testInfo.file.substring(indexOfTestSubfolderStart);
+      const normalizedFile = testInfo.file.replace(/\\/g, '/');
+      const indexOfTestSubfolderStart = normalizedFile.indexOf('/tests') + 7;
+      const fileName = normalizedFile.substring(indexOfTestSubfolderStart);
 
       logger.info(`Test started: ${fileName}`);
 

@@ -20,6 +20,12 @@ export class SignInPage {
     });
   }
 
+  async waitForOpened() {
+    await this.step(`Wait for the 'Sign In Page' to open`, async () => {
+      await this.page.waitForURL('/user/login');
+    });
+  }
+
   async fillEmailField(email) {
     await this.step(`Fill the 'Email' field`, async () => {
       await this.emailField.fill(email);
@@ -35,6 +41,12 @@ export class SignInPage {
   async clickSignInButton() {
     await this.step(`Click the 'Sign in' button`, async () => {
       await this.signInButton.click();
+    });
+  }
+
+  async submitSignInForm() {
+    await this.step(`Submit the 'Sign in' form`, async () => {
+      await this.passwordField.press('Enter');
     });
   }
 

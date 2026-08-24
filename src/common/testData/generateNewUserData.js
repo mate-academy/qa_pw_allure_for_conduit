@@ -1,5 +1,27 @@
 import { faker } from '@faker-js/faker';
 
+export function generateNewEmail() {
+  return faker.internet.email().toLowerCase();
+}
+
+export function generateNewUsername() {
+  const firstName = faker.person.firstName();
+  const lastName = faker.person.lastName();
+  return `${firstName}_${lastName}`.replaceAll(`'`).toLowerCase();
+}
+
+export function generateNewPassword() {
+  return faker.internet.password();
+}
+
+export function generateProfileImageUrl() {
+  return faker.image.url();
+}
+
+export function generateBioText() {
+  return faker.lorem.sentence(4);
+}
+
 export function generateNewUserData(logger = null) {
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
