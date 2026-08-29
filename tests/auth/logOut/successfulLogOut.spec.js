@@ -11,7 +11,6 @@ test('Successful log out', async ({
  homePage,
 
 }) => {
-  await settingsPage.open();
   await settingsPage.clickLogoutButton();
   await homePage.assertGlobalFeedTabIsVisible();
 });

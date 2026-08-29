@@ -13,7 +13,6 @@ test('Update email', async ({
   const newEmail = faker.internet.email();
   await settingsPage.fillEmailField(newEmail);
   await settingsPage.clickUpdateSettingsButton();
-  await settingsPage.open();
   await settingsPage.assertEmailIsDisplayed(newEmail.toLowerCase());
 });
 

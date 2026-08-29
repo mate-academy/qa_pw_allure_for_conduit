@@ -16,7 +16,6 @@ test('Update password', async ({
   const newPassword = faker.internet.password();
   await settingsPage.fillNewPasswordField(newPassword);
   await settingsPage.clickUpdateSettingsButton();
-  await settingsPage.open();
   await settingsPage.clickLogoutButton();
   await signInPage.open();
   await signInPage.fillEmailField(user.email);

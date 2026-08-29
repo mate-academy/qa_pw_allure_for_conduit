@@ -13,10 +13,10 @@ export const test = base.extend<
     users;
     infoTestLog;
     addAllureTestHierarchy;
-    cleanAllureResults
   },
   {
     logger;
+    cleanAllureResults;
   }
 >({
   usersNumber: [1, { option: true }],
