@@ -4,8 +4,9 @@ export class HomePage {
   constructor(page, userId = 0) {
     this.page = page;
     this.userId = userId;
-    this.yourFeedTab = page.getByText('Your Feed');
+    this.yourFeedTab = page.locator('a.nav-link', { hasText: 'Your Feed' });
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
+    this.globalFeedTab = page.locator('a.nav-link', { hasText: 'Global Feed' });
   }
 
   async step(title, stepToRun) {
@@ -21,6 +22,12 @@ export class HomePage {
   async assertYourFeedTabIsVisible() {
     await this.step(`Assert the 'Your Feed' tab is visible`, async () => {
       await expect(this.yourFeedTab).toBeVisible();
+    });
+  }  
+
+  async assertGlobalFeedTabIsVisible() {
+    await this.step(`Assert the 'Global Feed' tab is visible`, async () => {
+      await expect(this.globalFeedTab).toBeVisible();
     });
   }
 }

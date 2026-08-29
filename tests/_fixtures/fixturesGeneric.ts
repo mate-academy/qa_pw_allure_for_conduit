@@ -16,6 +16,7 @@ export const test = base.extend<
   },
   {
     logger;
+    cleanAllureResults;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -84,4 +85,18 @@ export const test = base.extend<
     },
     { scope: 'test', auto: true },
   ],
+  cleanAllureResults: [
+  async ({}, use) => {
+    const fs = require('fs');
+    const path = require('path');
+    const allureResultsPath = path.join(process.cwd(), 'allure-results');
+    
+    if (fs.existsSync(allureResultsPath)) {
+      fs.rmSync(allureResultsPath, { recursive: true });
+    }
+
+    await use('cleanAllureResults');
+  },
+  { scope: 'worker', auto: true },
+],
 });
