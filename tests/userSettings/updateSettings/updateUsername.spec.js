@@ -15,6 +15,7 @@ test('Update username', async ({
   const newUsername = faker.person.firstName() + '_' + faker.person.lastName();
   await settingsPage.fillUsernameField(newUsername);
   await settingsPage.clickUpdateSettingsButton();
-  await expect(page).toHaveURL(new RegExp(`/profile/${newUsername}`));
+  await settingsPage.open();
+  await settingsPage.assertUsernameIsDisplayed(newUsername.toLowerCase());
 });
 

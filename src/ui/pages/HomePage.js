@@ -26,7 +26,7 @@ export class HomePage {
   }  
 
   async assertGlobalFeedTabIsVisible() {
-    await this.step(`Assert the 'Your Feed' tab is visible`, async () => {
+    await this.step(`Assert the 'Global Feed' tab is visible`, async () => {
       await expect(this.globalFeedTab).toBeVisible();
     });
   }

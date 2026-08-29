@@ -78,7 +78,7 @@ export class SettingsPage {
 
     async assertUsernameIsDisplayed(username) {
     await this.step(`Assert the username is displayed`, async () => {
-      await expect(this.page.locator('h4')).toContainText(username);
+      await expect(this.usernameField).toHaveValue(username);
     });
   }
 

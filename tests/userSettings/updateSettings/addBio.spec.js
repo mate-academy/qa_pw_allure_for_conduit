@@ -10,7 +10,7 @@ test.beforeEach(async ({ page, user, settingsPage }) => {
 test('Add short Bio', async ({
  settingsPage,
 }) => {
-  const bio = faker.lorem.sentence();;
+  const bio = faker.lorem.sentence();
   await settingsPage.fillBioField(bio);
   await settingsPage.clickUpdateSettingsButton();
   await settingsPage.open();
