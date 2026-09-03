@@ -8,6 +8,10 @@ export class HomePage {
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
   }
 
+  async open() {
+    await this.page.goto('/');
+  }
+
   async step(title, stepToRun) {
     return await testStep(title, stepToRun, this.userId);
   }

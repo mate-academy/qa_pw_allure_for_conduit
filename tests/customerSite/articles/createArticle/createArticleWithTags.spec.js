@@ -1,6 +1,6 @@
-import { test } from '../../_fixtures/fixtures';
-import { generateNewArticleData } from '../../../src/common/testData/generateNewArticleData';
-import { signUpUser } from '../../../src/ui/actions/auth/signUpUser';
+import { test } from '../../../_fixtures/fixtures';
+import { generateNewArticleData } from '../../../../src/common/testData/generateNewArticleData';
+import { signUpUser } from '../../../../src/ui/actions/auth/signUpUser';
 
 const testParameters = [
   { tagsNumber: 1, testNameEnding: 'one tag' },
