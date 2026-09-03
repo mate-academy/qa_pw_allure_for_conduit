@@ -1,3 +1,4 @@
+import { rm } from 'node:fs/promises';
 import { test as base } from '@playwright/test';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
@@ -16,6 +17,7 @@ export const test = base.extend<
   },
   {
     logger;
+    clearAllureResults;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -44,6 +46,17 @@ export const test = base.extend<
 
     await use(users);
   },
+    clearAllureResults: [
+    async ({}, use) => {
+      await rm('allure-results', {
+        recursive: true,
+        force: true,
+      });
+
+      await use('clearAllureResults');
+    },
+    { scope: 'worker', auto: true },
+  ],
   logger: [
     async ({}, use) => {
       const logger = new Logger('error');
