@@ -5,11 +5,10 @@ import { HomePage } from '../../src/ui/pages/HomePage';
 import { UserSettingsPage } from '../../src/ui/pages/userSettings/UserSettingsPage';
 
 export const test = base.extend<{
-  signUpUsers;
-  signUpPage;
-  signInPage;
-  homePage;
-  userSettingsPage;
+  signUpPage: SignUpPage;
+  signInPage: SignInPage;
+  homePage: HomePage;
+  userSettingsPage: UserSettingsPage;
 }>({
   signUpPage: async ({ page }, use) => {
     const signUpPage = new SignUpPage(page);
