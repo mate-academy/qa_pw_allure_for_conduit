@@ -9,7 +9,6 @@ test('Successful `Log out` flow test', async ({
   headerPage,
   viewProfilePage,
   homePage,
-  page,
   settingsProfilePage,
 }) => {
   await homePage.open();
