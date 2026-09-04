@@ -1,7 +1,7 @@
-import { test } from '../../_fixtures/fixtures';
-import { ViewArticlePage } from '../../../src/ui/pages/article/ViewArticlePage';
-import { createArticle } from '../../../src/ui/actions/articles/createArticle';
-import { signUpUser } from '../../../src/ui/actions/auth/signUpUser';
+import { test } from '../../../_fixtures/fixtures';
+import { ViewArticlePage } from '../../../../src/ui/pages/article/ViewArticlePage';
+import { createArticle } from '../../../../src/ui/actions/articles/createArticle';
+import { signUpUser } from '../../../../src/ui/actions/auth/signUpUser';
 
 test.use({ contextsNumber: 2, usersNumber: 2 });
 

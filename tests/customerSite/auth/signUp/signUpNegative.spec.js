@@ -1,9 +1,9 @@
-import { test } from '../../_fixtures/fixtures';
+import { test } from '../../../_fixtures/fixtures';
 import {
   EMPTY_USERNAME_MESSAGE,
   INVALID_EMAIL_MESSAGE,
   EMPTY_PASSWORD_MESSAGE,
-} from '../../../src/ui/constants/authErrorMessages';
+} from '../../../../src/ui/constants/authErrorMessages';
 
 test.describe('Sign up negative tests', () => {
   test('Sign up with empty username', async ({ user, signUpPage }) => {

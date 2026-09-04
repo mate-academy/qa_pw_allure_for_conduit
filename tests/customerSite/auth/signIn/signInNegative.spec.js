@@ -1,10 +1,10 @@
-import { test } from '../../_fixtures/fixtures';
+import { test } from '../../../_fixtures/fixtures';
 import {
   EMPTY_EMAIL_MESSAGE,
   EMPTY_PASSWORD_MESSAGE,
   INVALID_EMAIL_OR_PASSWORD_MESSAGE,
-} from '../../../src/ui/constants/authErrorMessages';
-import { generateNewUserData } from '../../../src/common/testData/generateNewUserData';
+} from '../../../../src/ui/constants/authErrorMessages';
+import { generateNewUserData } from '../../../../src/common/testData/generateNewUserData';
 
 const user = generateNewUserData();
 const testParameters = [

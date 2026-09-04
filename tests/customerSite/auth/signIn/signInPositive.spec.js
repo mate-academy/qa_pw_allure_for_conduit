@@ -1,7 +1,7 @@
-import { test } from '../../_fixtures/fixtures';
-import { SignInPage } from '../../../src/ui/pages/auth/SignInPage';
-import { HomePage } from '../../../src/ui/pages/HomePage';
-import { signUpUser } from '../../../src/ui/actions/auth/signUpUser';
+import { test } from '../../../_fixtures/fixtures';
+import { SignInPage } from '../../../../src/ui/pages/auth/SignInPage';
+import { HomePage } from '../../../../src/ui/pages/HomePage';
+import { signUpUser } from '../../../../src/ui/actions/auth/signUpUser';
 
 let signInPage;
 let homePage;
