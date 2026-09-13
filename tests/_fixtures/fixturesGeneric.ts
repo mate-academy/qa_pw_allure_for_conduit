@@ -1,23 +1,22 @@
-import { test as base } from '@playwright/test';
+import { test as base, type Page } from '@playwright/test';
+import fs from 'fs';
+import path from 'path';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
 
-export const test = base.extend<
-  {
-    usersNumber;
-    contextsNumber;
-    pages;
-    user;
-    users;
-    infoTestLog;
-    addAllureTestHierarchy;
-  },
-  {
-    logger;
-  }
->({
+export const test = base.extend<{
+  usersNumber: number;
+  contextsNumber: number;
+  pages: Page[];
+  user: ReturnType<typeof generateNewUserData>;
+  users: ReturnType<typeof generateNewUserData>[];
+  infoTestLog: string;
+  addAllureTestHierarchy: string;
+  logger: Logger;
+  cleanAllureResults: string;
+}>({
   usersNumber: [1, { option: true }],
   contextsNumber: [1, { option: true }],
   pages: async ({ browser, contextsNumber }, use) => {
@@ -51,6 +50,16 @@ export const test = base.extend<
       await use(logger);
     },
     { scope: 'worker' },
+  ],
+  cleanAllureResults: [
+    async ({}, use) => {
+      const allureResultsDir = path.resolve(process.cwd(), 'allure-results');
+
+      fs.rmSync(allureResultsDir, { recursive: true, force: true });
+
+      await use('cleanAllureResults');
+    },
+    { scope: 'worker', auto: true },
   ],
   infoTestLog: [
     async ({ logger }, use, testInfo) => {
