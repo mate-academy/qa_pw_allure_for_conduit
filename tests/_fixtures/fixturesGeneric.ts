@@ -1,10 +1,14 @@
-import { test as base } from '@playwright/test';
+import { mergeTests, test as base } from '@playwright/test';
+import * as fs from 'node:fs/promises';
+import * as path from 'node:path';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
+import { test as authTest } from './fixturesAuth';
+import { test as articleTest } from './fixturesArticle';
 
-export const test = base.extend<
+const genericTest = base.extend<
   {
     usersNumber;
     contextsNumber;
@@ -52,6 +56,15 @@ export const test = base.extend<
     },
     { scope: 'worker' },
   ],
+  cleanAllureResults: [
+    async ({}, use) => {
+      const resultsDirectory = path.resolve(process.cwd(), 'allure-results');
+
+      await fs.rm(resultsDirectory, { recursive: true, force: true });
+      await use(undefined);
+    },
+    { scope: 'worker', auto: true },
+  ],
   infoTestLog: [
     async ({ logger }, use, testInfo) => {
       const indexOfTestSubfolderStart = testInfo.file.indexOf('/tests') + 7;
@@ -85,3 +98,5 @@ export const test = base.extend<
     { scope: 'test', auto: true },
   ],
 });
+
+export const test = mergeTests(authTest, genericTest, articleTest);
