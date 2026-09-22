@@ -1,21 +1,27 @@
-import { test as base } from '@playwright/test';
+import {test as base, Page} from '@playwright/test';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
+import { rmSync } from 'node:fs';
+import path from 'path';
+
+
+type UserData = ReturnType<typeof generateNewUserData>;
 
 export const test = base.extend<
   {
-    usersNumber;
-    contextsNumber;
-    pages;
-    user;
-    users;
-    infoTestLog;
-    addAllureTestHierarchy;
+    usersNumber: number;
+    contextsNumber: number;
+    pages: Page[];
+    user: UserData;
+    users: UserData[];
+    infoTestLog: string;
+    addAllureTestHierarchy: string;
   },
   {
-    logger;
+    logger: Logger;
+    cleanAllureResults: void;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -84,4 +90,17 @@ export const test = base.extend<
     },
     { scope: 'test', auto: true },
   ],
+
+  cleanAllureResults: [
+    async ( {logger}, use) => {
+
+      const allureResultsPath = path.resolve('allure-results');
+      rmSync(allureResultsPath, { recursive: true, force: true });
+      logger.debug(`Deleted allure-results folder: ${allureResultsPath}`);
+      await use();
+    },
+    { scope: 'worker', auto: true },
+  ],
 });
+
+

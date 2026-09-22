@@ -1,5 +1,8 @@
 import { faker } from '@faker-js/faker';
 
+/**
+ * @param {{ debug: (message: string) => void } | null} [logger]
+ */
 export function generateNewUserData(logger = null) {
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
