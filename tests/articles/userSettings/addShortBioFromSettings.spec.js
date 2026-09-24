@@ -1,10 +1,6 @@
 import { test } from '../../_fixtures/fixtures';
 
-test('Successful `Sign up` flow test', async ({
-  user,
-  signUpPage,
-  homePage,
-}) => {
+test('Add short bio from settings', async ({ user, signUpPage, homePage }) => {
   await signUpPage.open();
   await signUpPage.fillUsernameField(user.username);
   await signUpPage.fillEmailField(user.email);

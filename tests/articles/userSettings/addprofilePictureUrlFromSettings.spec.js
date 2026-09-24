@@ -1,6 +1,6 @@
 import { test } from '../../_fixtures/fixtures';
 
-test('Successful `Sign up` flow test', async ({
+test('Add profile picture URL from settings', async ({
   user,
   signUpPage,
   homePage,

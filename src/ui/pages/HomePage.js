@@ -77,9 +77,9 @@ export class HomePage {
     });
   }
   async fillShortBioFromSetting() {
-    await this.step(` Fill short bio from setting`, async () => [
-      await this.shortBioField.fill('My name si Vasia'),
-    ]);
+    await this.step(` Fill short bio from setting`, async () => {
+      await this.shortBioField.fill('My name si Vasia');
+    });
   }
   async assertShortBioVisible() {
     await this.step(`Assert short bio visible in home page`, async () => {

@@ -1,6 +1,6 @@
 import { test } from '../../_fixtures/fixtures';
 
-test('Successful `Sign up` flow test', async ({
+test('Update password from settings', async ({
   user,
   signUpPage,
   homePage,

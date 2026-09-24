@@ -1,6 +1,6 @@
 import { test } from '../../_fixtures/fixtures';
 
-test('Successful `logOut User', async ({ user, signUpPage, homePage }) => {
+test('Log out user', async ({ user, signUpPage, homePage }) => {
   await signUpPage.open();
   await signUpPage.fillUsernameField(user.username);
   await signUpPage.fillEmailField(user.email);
