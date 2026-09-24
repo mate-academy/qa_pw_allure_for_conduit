@@ -1,4 +1,5 @@
 import { test as base } from '@playwright/test';
+import fs from 'fs';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
@@ -13,6 +14,7 @@ export const test = base.extend<
     users;
     infoTestLog;
     addAllureTestHierarchy;
+    deleteAllureResults;
   },
   {
     logger;
@@ -76,6 +78,7 @@ export const test = base.extend<
 
       await allure.parentSuite(parentSuite);
       await allure.suite(suite);
+
       if (subSuite) {
         await allure.subSuite(subSuite);
       }
@@ -83,5 +86,18 @@ export const test = base.extend<
       await use('addAllureTestHierarhy');
     },
     { scope: 'test', auto: true },
+  ],
+  deleteAllureResults: [
+    async ({}, use) => {
+      if (fs.existsSync('allure-results')) {
+        fs.rmSync('allure-results', {
+          recursive: true,
+          force: true,
+        });
+      }
+
+      await use();
+    },
+    { scope: 'worker', auto: true },
   ],
 });
