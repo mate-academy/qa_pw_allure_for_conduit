@@ -1,4 +1,6 @@
 import { test as base } from '@playwright/test';
+import { rmSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
@@ -16,25 +18,30 @@ export const test = base.extend<
   },
   {
     logger;
+    cleanAllureResults;
   }
 >({
   usersNumber: [1, { option: true }],
+
   contextsNumber: [1, { option: true }],
+
   pages: async ({ browser, contextsNumber }, use) => {
-    let pages = Array(contextsNumber);
+    const pages = Array(contextsNumber);
 
     for (let i = 0; i < contextsNumber; i++) {
       const context = await browser.newContext();
-
       pages[i] = await context.newPage();
     }
+
     await use(pages);
   },
+
   user: async ({ logger }, use) => {
     const user = generateNewUserData(logger);
 
     await use(user);
   },
+
   users: async ({ logger, usersNumber }, use) => {
     const users = Array(usersNumber);
 
@@ -44,6 +51,7 @@ export const test = base.extend<
 
     await use(users);
   },
+
   logger: [
     async ({}, use) => {
       const logger = new Logger('error');
@@ -52,10 +60,27 @@ export const test = base.extend<
     },
     { scope: 'worker' },
   ],
+
+  cleanAllureResults: [
+    async ({}, use) => {
+      const resultsDirectory = resolve(process.cwd(), 'allure-results');
+
+      rmSync(resultsDirectory, {
+        recursive: true,
+        force: true,
+      });
+
+      await use();
+    },
+    { scope: 'worker', auto: true },
+  ],
+
   infoTestLog: [
     async ({ logger }, use, testInfo) => {
-      const indexOfTestSubfolderStart = testInfo.file.indexOf('/tests') + 7;
-      const fileName = testInfo.file.substring(indexOfTestSubfolderStart);
+      const normalizedFileName = testInfo.file.replace(/\\/g, '/');
+      const indexOfTestSubfolderStart =
+        normalizedFileName.indexOf('/tests/') + 7;
+      const fileName = normalizedFileName.substring(indexOfTestSubfolderStart);
 
       logger.info(`Test started: ${fileName}`);
 
@@ -65,6 +90,7 @@ export const test = base.extend<
     },
     { scope: 'test', auto: true },
   ],
+
   addAllureTestHierarchy: [
     async ({ logger }, use, testInfo) => {
       const fileName = testInfo.file;
@@ -76,11 +102,12 @@ export const test = base.extend<
 
       await allure.parentSuite(parentSuite);
       await allure.suite(suite);
+
       if (subSuite) {
         await allure.subSuite(subSuite);
       }
 
-      await use('addAllureTestHierarhy');
+      await use('addAllureTestHierarchy');
     },
     { scope: 'test', auto: true },
   ],
