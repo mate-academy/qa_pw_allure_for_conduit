@@ -12,7 +12,11 @@ export class ViewArticlePage {
   }
 
   tagListItem(tagName) {
-    return this.page.getByRole('listitem').filter({ hasText: tagName });
+    return this.page.getByRole('listitem').filter({
+      hasText: new RegExp(
+        `^${tagName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`,
+      ),
+    });
   }
 
   async step(title, stepToRun) {
