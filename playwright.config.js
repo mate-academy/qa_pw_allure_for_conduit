@@ -1,6 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import * as fs from 'fs';
-import * as path from 'path';
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -31,12 +30,6 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
 
-    workerInitScript: async () => {
-      const allureResultsPath = path.join(process.cwd(), 'allure-results');
-      if (fs.existsSync(allureResultsPath)) {
-        fs.rmSync(allureResultsPath, { recursive: true, force: true });
-      }
-    },
   },
 
   /* Configure projects for major browsers */

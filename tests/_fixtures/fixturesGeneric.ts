@@ -4,6 +4,7 @@ import { generateNewUserData } from '../../src/common/testData/generateNewUserDa
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
 import fs from 'node:fs/promises';
+import path from 'node:path';
 
 export const test = base.extend<
   {
@@ -17,6 +18,7 @@ export const test = base.extend<
   },
   {
     logger;
+    cleanAllureResult;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -84,5 +86,26 @@ export const test = base.extend<
       await use('addAllureTestHierarhy');
     },
     { scope: 'test', auto: true },
+  ],
+  cleanAllureResult: [
+    async ({}, use) => {
+      const dir = 'allure-results';
+      const runStart = Number(process.env.ALLURE_RUN_START);
+
+      try {
+        for (const name of await fs.readdir(dir)) {
+          const file = path.join(dir, name);
+          const { mtimeMs } = await fs.stat(file);
+          if (mtimeMs < runStart) {
+            await fs.rm(file, { recursive: true, force: true });
+          }
+        }
+      } catch {
+  
+      }
+
+      await use();
+    },
+    { scope: 'worker', auto: true },
   ],
 });
