@@ -1,0 +1,444 @@
+{
+  "name": "timeline",
+  "children": [
+    {
+      "name": "MazemDevol",
+      "children": [
+        {
+          "name": "pid-39613-worker-0",
+          "children": [
+            {
+              "name": "Sign up with empty email",
+              "uid": "ad83b4e5e21527e9",
+              "status": "passed",
+              "time": {
+                "start": 1792661176155,
+                "stop": 1792661176835,
+                "duration": 680
+              }
+            },
+            {
+              "name": "Create an article with two tags",
+              "uid": "1696f3626dafb5a8",
+              "status": "passed",
+              "time": {
+                "start": 1792661163780,
+                "stop": 1792661165234,
+                "duration": 1454
+              }
+            },
+            {
+              "name": "Update email from settings",
+              "uid": "3811478989ed9ee3",
+              "status": "passed",
+              "time": {
+                "start": 1792661181880,
+                "stop": 1792661183269,
+                "duration": 1389
+              }
+            },
+            {
+              "name": "Sign up with empty password",
+              "uid": "9acb5eb127060ea9",
+              "status": "passed",
+              "time": {
+                "start": 1792661176956,
+                "stop": 1792661177617,
+                "duration": 661
+              }
+            },
+            {
+              "name": "Add short bio from settings",
+              "uid": "33263b6c912c6ab4",
+              "status": "passed",
+              "time": {
+                "start": 1792661180349,
+                "stop": 1792661181763,
+                "duration": 1414
+              }
+            },
+            {
+              "name": "Sign in with empty password",
+              "uid": "3d5eae21de01356f",
+              "status": "passed",
+              "time": {
+                "start": 1792661169837,
+                "stop": 1792661170500,
+                "duration": 663
+              }
+            },
+            {
+              "name": "Successful `Log Out User` flow test",
+              "uid": "2a00fe89fce9dea",
+              "status": "passed",
+              "time": {
+                "start": 1792661174047,
+                "stop": 1792661175203,
+                "duration": 1156
+              }
+            },
+            {
+              "name": "Creat an article with required fields",
+              "uid": "b9f54142242e101a",
+              "status": "passed",
+              "time": {
+                "start": 1792661160639,
+                "stop": 1792661162186,
+                "duration": 1547
+              }
+            },
+            {
+              "name": "View an article created by another user",
+              "uid": "a2ed9f5690dccf84",
+              "status": "passed",
+              "time": {
+                "start": 1792661167031,
+                "stop": 1792661169719,
+                "duration": 2688
+              }
+            },
+            {
+              "name": "Add profile picture from settings",
+              "uid": "3bb81f08291252dd",
+              "status": "passed",
+              "time": {
+                "start": 1792661178855,
+                "stop": 1792661180211,
+                "duration": 1356
+              }
+            },
+            {
+              "name": "Successful `Sign up` flow test",
+              "uid": "68362ab9a740339d",
+              "status": "passed",
+              "time": {
+                "start": 1792661177730,
+                "stop": 1792661178727,
+                "duration": 997
+              }
+            },
+            {
+              "name": "Update password from settings",
+              "uid": "644d54b14defa09c",
+              "status": "passed",
+              "time": {
+                "start": 1792661183376,
+                "stop": 1792661185411,
+                "duration": 2035
+              }
+            },
+            {
+              "name": "Creat an article without required fields",
+              "uid": "34c681dd0a92a710",
+              "status": "passed",
+              "time": {
+                "start": 1792661159246,
+                "stop": 1792661160552,
+                "duration": 1306
+              }
+            },
+            {
+              "name": "Update username from settings",
+              "uid": "2ea7ce5acd094eab",
+              "status": "passed",
+              "time": {
+                "start": 1792661185537,
+                "stop": 1792661186942,
+                "duration": 1405
+              }
+            },
+            {
+              "name": "Create an article with one tag",
+              "uid": "30cb6c956d29e734",
+              "status": "passed",
+              "time": {
+                "start": 1792661162199,
+                "stop": 1792661163770,
+                "duration": 1571
+              }
+            },
+            {
+              "name": "Sign up with empty username",
+              "uid": "45e87c61ef765c31",
+              "status": "passed",
+              "time": {
+                "start": 1792661175345,
+                "stop": 1792661176028,
+                "duration": 683
+              }
+            },
+            {
+              "name": "Successful `Sign in` flow test",
+              "uid": "f922b250d2e232aa",
+              "status": "passed",
+              "time": {
+                "start": 1792661172061,
+                "stop": 1792661173907,
+                "duration": 1846
+              }
+            },
+            {
+              "name": "Sign in with wrong password",
+              "uid": "89a40bd45824ac37",
+              "status": "passed",
+              "time": {
+                "start": 1792661171318,
+                "stop": 1792661171975,
+                "duration": 657
+              }
+            },
+            {
+              "name": "Create an article with ten tags",
+              "uid": "86da639573e957b9",
+              "status": "passed",
+              "time": {
+                "start": 1792661165245,
+                "stop": 1792661167020,
+                "duration": 1775
+              }
+            },
+            {
+              "name": "Sign in with empty email",
+              "uid": "de810b9f7c064fb6",
+              "status": "passed",
+              "time": {
+                "start": 1792661170580,
+                "stop": 1792661171250,
+                "duration": 670
+              }
+            }
+          ],
+          "uid": "330a809a7968c549df4a65eb5e070171"
+        },
+        {
+          "name": "pid-37326-worker-0",
+          "children": [
+            {
+              "name": "Update username from settings",
+              "uid": "f25b5116bb95de8d",
+              "status": "passed",
+              "time": {
+                "start": 1792660827061,
+                "stop": 1792660828531,
+                "duration": 1470
+              },
+              "retry": true
+            },
+            {
+              "name": "Add profile picture from settings",
+              "uid": "e0d37a2f7ef6c9e9",
+              "status": "passed",
+              "time": {
+                "start": 1792660820362,
+                "stop": 1792660821828,
+                "duration": 1466
+              },
+              "retry": true
+            },
+            {
+              "name": "Sign in with wrong password",
+              "uid": "481762ac6906938b",
+              "status": "passed",
+              "time": {
+                "start": 1792660812741,
+                "stop": 1792660813399,
+                "duration": 658
+              },
+              "retry": true
+            },
+            {
+              "name": "Sign up with empty username",
+              "uid": "6a526bf560b66fbe",
+              "status": "passed",
+              "time": {
+                "start": 1792660816792,
+                "stop": 1792660817447,
+                "duration": 655
+              },
+              "retry": true
+            },
+            {
+              "name": "Sign up with empty password",
+              "uid": "c2845b66a098f1c8",
+              "status": "passed",
+              "time": {
+                "start": 1792660818347,
+                "stop": 1792660819052,
+                "duration": 705
+              },
+              "retry": true
+            },
+            {
+              "name": "Update password from settings",
+              "uid": "ca618f0eeb5a34ff",
+              "status": "passed",
+              "time": {
+                "start": 1792660824885,
+                "stop": 1792660826920,
+                "duration": 2035
+              },
+              "retry": true
+            },
+            {
+              "name": "Update email from settings",
+              "uid": "cea3d5a55a991f26",
+              "status": "passed",
+              "time": {
+                "start": 1792660823447,
+                "stop": 1792660824756,
+                "duration": 1309
+              },
+              "retry": true
+            },
+            {
+              "name": "Create an article with two tags",
+              "uid": "826fe98f5f7ebc41",
+              "status": "passed",
+              "time": {
+                "start": 1792660804145,
+                "stop": 1792660805727,
+                "duration": 1582
+              },
+              "retry": true
+            },
+            {
+              "name": "View an article created by another user",
+              "uid": "c458756ba3974de4",
+              "status": "passed",
+              "time": {
+                "start": 1792660808422,
+                "stop": 1792660811119,
+                "duration": 2697
+              },
+              "retry": true
+            },
+            {
+              "name": "Creat an article without required fields",
+              "uid": "b94790250062db70",
+              "status": "passed",
+              "time": {
+                "start": 1792660799585,
+                "stop": 1792660800914,
+                "duration": 1329
+              },
+              "retry": true
+            },
+            {
+              "name": "Sign in with empty email",
+              "uid": "498b1572798f0381",
+              "status": "passed",
+              "time": {
+                "start": 1792660812018,
+                "stop": 1792660812669,
+                "duration": 651
+              },
+              "retry": true
+            },
+            {
+              "name": "Create an article with ten tags",
+              "uid": "2e664c22f44c8ffc",
+              "status": "failed",
+              "time": {
+                "start": 1792660805735,
+                "stop": 1792660807581,
+                "duration": 1846
+              },
+              "retry": true
+            },
+            {
+              "name": "Successful `Sign in` flow test",
+              "uid": "fc52b6b2755010bf",
+              "status": "passed",
+              "time": {
+                "start": 1792660813476,
+                "stop": 1792660815353,
+                "duration": 1877
+              },
+              "retry": true
+            },
+            {
+              "name": "Successful `Log Out User` flow test",
+              "uid": "774a93bcd2b7bf7",
+              "status": "passed",
+              "time": {
+                "start": 1792660815507,
+                "stop": 1792660816666,
+                "duration": 1159
+              },
+              "retry": true
+            },
+            {
+              "name": "Creat an article with required fields",
+              "uid": "bfe8fccd1b6c2a20",
+              "status": "passed",
+              "time": {
+                "start": 1792660800990,
+                "stop": 1792660802547,
+                "duration": 1557
+              },
+              "retry": true
+            },
+            {
+              "name": "Sign up with empty email",
+              "uid": "2932d3e15df8065e",
+              "status": "passed",
+              "time": {
+                "start": 1792660817555,
+                "stop": 1792660818224,
+                "duration": 669
+              },
+              "retry": true
+            },
+            {
+              "name": "Add short bio from settings",
+              "uid": "60edab138629e202",
+              "status": "passed",
+              "time": {
+                "start": 1792660821964,
+                "stop": 1792660823325,
+                "duration": 1361
+              },
+              "retry": true
+            },
+            {
+              "name": "Sign in with empty password",
+              "uid": "8d7b121802a1e251",
+              "status": "passed",
+              "time": {
+                "start": 1792660811334,
+                "stop": 1792660811937,
+                "duration": 603
+              },
+              "retry": true
+            },
+            {
+              "name": "Successful `Sign up` flow test",
+              "uid": "11e7f5dd4825674e",
+              "status": "passed",
+              "time": {
+                "start": 1792660819188,
+                "stop": 1792660820226,
+                "duration": 1038
+              },
+              "retry": true
+            },
+            {
+              "name": "Create an article with one tag",
+              "uid": "f360bd1d2e5afbbe",
+              "status": "passed",
+              "time": {
+                "start": 1792660802562,
+                "stop": 1792660804135,
+                "duration": 1573
+              },
+              "retry": true
+            }
+          ],
+          "uid": "5f8e51e3f09d3f3c1e2018bf3003bc96"
+        }
+      ],
+      "uid": "aadf0e10e70683893710f12f686416a0"
+    }
+  ],
+  "uid": "ab17fc5a4eb3bca4b216b548c7f9fcbc"
+}

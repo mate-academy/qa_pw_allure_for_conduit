@@ -1,0 +1,506 @@
+{
+  "uid": "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name": "packages",
+  "children": [
+    {
+      "name": "articles",
+      "children": [
+        {
+          "name": "createArticle",
+          "children": [
+            {
+              "name": "createArticleWithoutRequiredFields.spec.js",
+              "children": [
+                {
+                  "name": "Creat an article without required fields",
+                  "uid": "34c681dd0a92a710",
+                  "parentUid": "40d57ca44c9ac37d1334d28096ac8402",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661159246,
+                    "stop": 1792661160552,
+                    "duration": 1306
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                }
+              ],
+              "uid": "createArticleWithoutRequiredFields.spec.js"
+            },
+            {
+              "name": "createArticleWithRequiredFields.spec.js",
+              "children": [
+                {
+                  "name": "Creat an article with required fields",
+                  "uid": "b9f54142242e101a",
+                  "parentUid": "637a7ca52f7be212644ef9e7f5e8925a",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661160639,
+                    "stop": 1792661162186,
+                    "duration": 1547
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                }
+              ],
+              "uid": "createArticleWithRequiredFields.spec.js"
+            },
+            {
+              "name": "createArticleWithTags.spec.js",
+              "children": [
+                {
+                  "name": "Create an article with one tag",
+                  "uid": "30cb6c956d29e734",
+                  "parentUid": "485b7780dcae81c316349223dfbdb359",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661162199,
+                    "stop": 1792661163770,
+                    "duration": 1571
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                },
+                {
+                  "name": "Create an article with two tags",
+                  "uid": "1696f3626dafb5a8",
+                  "parentUid": "485b7780dcae81c316349223dfbdb359",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661163780,
+                    "stop": 1792661165234,
+                    "duration": 1454
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                },
+                {
+                  "name": "Create an article with ten tags",
+                  "uid": "86da639573e957b9",
+                  "parentUid": "485b7780dcae81c316349223dfbdb359",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661165245,
+                    "stop": 1792661167020,
+                    "duration": 1775
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": true,
+                  "parameters": ["chromium"],
+                  "tags": []
+                }
+              ],
+              "uid": "createArticleWithTags.spec.js"
+            }
+          ],
+          "uid": "514a658cd591e4c9ce52fedb555ce39f"
+        },
+        {
+          "name": "viewArticle.viewArticleCreatedByAnotherUser.spec.js",
+          "children": [
+            {
+              "name": "View an article created by another user",
+              "uid": "a2ed9f5690dccf84",
+              "parentUid": "15d187b88ff4fde23cbcd854e7887dd4",
+              "status": "passed",
+              "time": {
+                "start": 1792661167031,
+                "stop": 1792661169719,
+                "duration": 2688
+              },
+              "flaky": false,
+              "newFailed": false,
+              "newPassed": false,
+              "newBroken": false,
+              "retriesCount": 1,
+              "retriesStatusChange": false,
+              "parameters": ["chromium"],
+              "tags": []
+            }
+          ],
+          "uid": "viewArticle.viewArticleCreatedByAnotherUser.spec.js"
+        }
+      ],
+      "uid": "02dcf7c870aa86cebfd1a30219490089"
+    },
+    {
+      "name": "auth",
+      "children": [
+        {
+          "name": "signIn",
+          "children": [
+            {
+              "name": "signInNegative.spec.js",
+              "children": [
+                {
+                  "name": "Sign in with empty password",
+                  "uid": "3d5eae21de01356f",
+                  "parentUid": "8b57053aa94e84f88636d022173c59a4",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661169837,
+                    "stop": 1792661170500,
+                    "duration": 663
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                },
+                {
+                  "name": "Sign in with empty email",
+                  "uid": "de810b9f7c064fb6",
+                  "parentUid": "8b57053aa94e84f88636d022173c59a4",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661170580,
+                    "stop": 1792661171250,
+                    "duration": 670
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                },
+                {
+                  "name": "Sign in with wrong password",
+                  "uid": "89a40bd45824ac37",
+                  "parentUid": "8b57053aa94e84f88636d022173c59a4",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661171318,
+                    "stop": 1792661171975,
+                    "duration": 657
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                }
+              ],
+              "uid": "signInNegative.spec.js"
+            },
+            {
+              "name": "signInPositive.spec.js",
+              "children": [
+                {
+                  "name": "Successful `Sign in` flow test",
+                  "uid": "f922b250d2e232aa",
+                  "parentUid": "7291f5e5abb25e664f8f57a226647557",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661172061,
+                    "stop": 1792661173907,
+                    "duration": 1846
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                }
+              ],
+              "uid": "signInPositive.spec.js"
+            }
+          ],
+          "uid": "9e8f806a3576b836de65a970fa5731e7"
+        },
+        {
+          "name": "signOut.logOutUser.spec.js",
+          "children": [
+            {
+              "name": "Successful `Log Out User` flow test",
+              "uid": "2a00fe89fce9dea",
+              "parentUid": "81bbac55df063c18cfdb5e846c094d82",
+              "status": "passed",
+              "time": {
+                "start": 1792661174047,
+                "stop": 1792661175203,
+                "duration": 1156
+              },
+              "flaky": false,
+              "newFailed": false,
+              "newPassed": false,
+              "newBroken": false,
+              "retriesCount": 1,
+              "retriesStatusChange": false,
+              "parameters": ["chromium"],
+              "tags": []
+            }
+          ],
+          "uid": "signOut.logOutUser.spec.js"
+        },
+        {
+          "name": "signUp",
+          "children": [
+            {
+              "name": "signUpNegative.spec.js",
+              "children": [
+                {
+                  "name": "Sign up with empty username",
+                  "uid": "45e87c61ef765c31",
+                  "parentUid": "95758d8e31a908b0adccd70989b953f1",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661175345,
+                    "stop": 1792661176028,
+                    "duration": 683
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                },
+                {
+                  "name": "Sign up with empty email",
+                  "uid": "ad83b4e5e21527e9",
+                  "parentUid": "95758d8e31a908b0adccd70989b953f1",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661176155,
+                    "stop": 1792661176835,
+                    "duration": 680
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                },
+                {
+                  "name": "Sign up with empty password",
+                  "uid": "9acb5eb127060ea9",
+                  "parentUid": "95758d8e31a908b0adccd70989b953f1",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661176956,
+                    "stop": 1792661177617,
+                    "duration": 661
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                }
+              ],
+              "uid": "signUpNegative.spec.js"
+            },
+            {
+              "name": "signUpPositive.spec.js",
+              "children": [
+                {
+                  "name": "Successful `Sign up` flow test",
+                  "uid": "68362ab9a740339d",
+                  "parentUid": "390de521d5b2abc25f6a40ea8840df91",
+                  "status": "passed",
+                  "time": {
+                    "start": 1792661177730,
+                    "stop": 1792661178727,
+                    "duration": 997
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 1,
+                  "retriesStatusChange": false,
+                  "parameters": ["chromium"],
+                  "tags": []
+                }
+              ],
+              "uid": "signUpPositive.spec.js"
+            }
+          ],
+          "uid": "71d88157148539e18c4ca9082a9390c2"
+        }
+      ],
+      "uid": "e9bb360e9075876261a3ce0056c4ddf7"
+    },
+    {
+      "name": "settings.userSettings",
+      "children": [
+        {
+          "name": "addProfilePictureUrlFromSettings.spec.js",
+          "children": [
+            {
+              "name": "Add profile picture from settings",
+              "uid": "3bb81f08291252dd",
+              "parentUid": "8da5ef41e160637cdb1464a99fea1b2a",
+              "status": "passed",
+              "time": {
+                "start": 1792661178855,
+                "stop": 1792661180211,
+                "duration": 1356
+              },
+              "flaky": false,
+              "newFailed": false,
+              "newPassed": false,
+              "newBroken": false,
+              "retriesCount": 1,
+              "retriesStatusChange": false,
+              "parameters": ["chromium"],
+              "tags": []
+            }
+          ],
+          "uid": "addProfilePictureUrlFromSettings.spec.js"
+        },
+        {
+          "name": "addShortBioFromSettings.spec.js",
+          "children": [
+            {
+              "name": "Add short bio from settings",
+              "uid": "33263b6c912c6ab4",
+              "parentUid": "576397dbb29ea991599dd310ed156ed3",
+              "status": "passed",
+              "time": {
+                "start": 1792661180349,
+                "stop": 1792661181763,
+                "duration": 1414
+              },
+              "flaky": false,
+              "newFailed": false,
+              "newPassed": false,
+              "newBroken": false,
+              "retriesCount": 1,
+              "retriesStatusChange": false,
+              "parameters": ["chromium"],
+              "tags": []
+            }
+          ],
+          "uid": "addShortBioFromSettings.spec.js"
+        },
+        {
+          "name": "updateEmailFromSettings.spec.js",
+          "children": [
+            {
+              "name": "Update email from settings",
+              "uid": "3811478989ed9ee3",
+              "parentUid": "9876366f49b1173f8d5b425765bf1402",
+              "status": "passed",
+              "time": {
+                "start": 1792661181880,
+                "stop": 1792661183269,
+                "duration": 1389
+              },
+              "flaky": false,
+              "newFailed": false,
+              "newPassed": false,
+              "newBroken": false,
+              "retriesCount": 1,
+              "retriesStatusChange": false,
+              "parameters": ["chromium"],
+              "tags": []
+            }
+          ],
+          "uid": "updateEmailFromSettings.spec.js"
+        },
+        {
+          "name": "updatePasswordFromSettings.spec.js",
+          "children": [
+            {
+              "name": "Update password from settings",
+              "uid": "644d54b14defa09c",
+              "parentUid": "0bd8bae47137084f3a246fab36b91bb6",
+              "status": "passed",
+              "time": {
+                "start": 1792661183376,
+                "stop": 1792661185411,
+                "duration": 2035
+              },
+              "flaky": false,
+              "newFailed": false,
+              "newPassed": false,
+              "newBroken": false,
+              "retriesCount": 1,
+              "retriesStatusChange": false,
+              "parameters": ["chromium"],
+              "tags": []
+            }
+          ],
+          "uid": "updatePasswordFromSettings.spec.js"
+        },
+        {
+          "name": "updateUsernameFromSettings.spec.js",
+          "children": [
+            {
+              "name": "Update username from settings",
+              "uid": "2ea7ce5acd094eab",
+              "parentUid": "868148239ce9584ac114f825f8e7c9bd",
+              "status": "passed",
+              "time": {
+                "start": 1792661185537,
+                "stop": 1792661186942,
+                "duration": 1405
+              },
+              "flaky": false,
+              "newFailed": false,
+              "newPassed": false,
+              "newBroken": false,
+              "retriesCount": 1,
+              "retriesStatusChange": false,
+              "parameters": ["chromium"],
+              "tags": []
+            }
+          ],
+          "uid": "updateUsernameFromSettings.spec.js"
+        }
+      ],
+      "uid": "settings.userSettings"
+    }
+  ]
+}

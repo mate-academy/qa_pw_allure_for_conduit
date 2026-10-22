@@ -1,0 +1,41 @@
+{
+  "total": 3,
+  "items": [
+    {
+      "uid": "b872de12187d782cdfbf86b0ea1a225c",
+      "name": "Auth",
+      "statistic": {
+        "failed": 0,
+        "broken": 0,
+        "skipped": 0,
+        "passed": 9,
+        "unknown": 0,
+        "total": 9
+      }
+    },
+    {
+      "uid": "d5724bf48dd0baaaece67c6d2fabf398",
+      "name": "Articles",
+      "statistic": {
+        "failed": 0,
+        "broken": 0,
+        "skipped": 0,
+        "passed": 6,
+        "unknown": 0,
+        "total": 6
+      }
+    },
+    {
+      "uid": "204047e0fad7be0bb5a7b6c0b9323602",
+      "name": "Settings",
+      "statistic": {
+        "failed": 0,
+        "broken": 0,
+        "skipped": 0,
+        "passed": 5,
+        "unknown": 0,
+        "total": 5
+      }
+    }
+  ]
+}

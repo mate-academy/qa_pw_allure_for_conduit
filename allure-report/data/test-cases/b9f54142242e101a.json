@@ -1,0 +1,919 @@
+{
+  "uid": "b9f54142242e101a",
+  "name": "Creat an article with required fields",
+  "fullName": "articles/createArticle/createArticleWithRequiredFields.spec.js:13:5",
+  "time": { "start": 1792661160639, "stop": 1792661162186, "duration": 1547 },
+  "status": "passed",
+  "flaky": false,
+  "newFailed": false,
+  "newBroken": false,
+  "newPassed": false,
+  "retriesCount": 1,
+  "retriesStatusChange": false,
+  "beforeStages": [],
+  "testStage": {
+    "status": "passed",
+    "steps": [
+      {
+        "name": "Before Hooks",
+        "time": {
+          "start": 1792661160639,
+          "stop": 1792661161587,
+          "duration": 948
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "beforeEach hook",
+            "time": {
+              "start": 1792661160639,
+              "stop": 1792661161585,
+              "duration": 946
+            },
+            "status": "passed",
+            "steps": [
+              {
+                "name": "fixture: infoTestLog",
+                "time": {
+                  "start": 1792661160641,
+                  "stop": 1792661160641,
+                  "duration": 0
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "hasContent": false,
+                "shouldDisplayMessage": false,
+                "stepsCount": 0,
+                "attachmentsCount": 0,
+                "attachmentStep": false
+              },
+              {
+                "name": "fixture: addAllureTestHierarchy",
+                "time": {
+                  "start": 1792661160642,
+                  "stop": 1792661160643,
+                  "duration": 1
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "hasContent": false,
+                "shouldDisplayMessage": false,
+                "stepsCount": 0,
+                "attachmentsCount": 0,
+                "attachmentStep": false
+              },
+              {
+                "name": "fixture: context",
+                "time": {
+                  "start": 1792661160644,
+                  "stop": 1792661160653,
+                  "duration": 9
+                },
+                "status": "passed",
+                "steps": [
+                  {
+                    "name": "browser.newContext",
+                    "time": {
+                      "start": 1792661160644,
+                      "stop": 1792661160647,
+                      "duration": 3
+                    },
+                    "status": "passed",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "hasContent": false,
+                    "shouldDisplayMessage": false,
+                    "stepsCount": 0,
+                    "attachmentsCount": 0,
+                    "attachmentStep": false
+                  }
+                ],
+                "attachments": [],
+                "parameters": [],
+                "hasContent": true,
+                "shouldDisplayMessage": false,
+                "stepsCount": 1,
+                "attachmentsCount": 0,
+                "attachmentStep": false
+              },
+              {
+                "name": "fixture: page",
+                "time": {
+                  "start": 1792661160654,
+                  "stop": 1792661160680,
+                  "duration": 26
+                },
+                "status": "passed",
+                "steps": [
+                  {
+                    "name": "browserContext.newPage",
+                    "time": {
+                      "start": 1792661160655,
+                      "stop": 1792661160680,
+                      "duration": 25
+                    },
+                    "status": "passed",
+                    "steps": [],
+                    "attachments": [],
+                    "parameters": [],
+                    "hasContent": false,
+                    "shouldDisplayMessage": false,
+                    "stepsCount": 0,
+                    "attachmentsCount": 0,
+                    "attachmentStep": false
+                  }
+                ],
+                "attachments": [],
+                "parameters": [],
+                "hasContent": true,
+                "shouldDisplayMessage": false,
+                "stepsCount": 1,
+                "attachmentsCount": 0,
+                "attachmentStep": false
+              },
+              {
+                "name": "fixture: user",
+                "time": {
+                  "start": 1792661160681,
+                  "stop": 1792661160682,
+                  "duration": 1
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "hasContent": false,
+                "shouldDisplayMessage": false,
+                "stepsCount": 0,
+                "attachmentsCount": 0,
+                "attachmentStep": false
+              },
+              {
+                "name": "Sign up user",
+                "time": {
+                  "start": 1792661160683,
+                  "stop": 1792661161585,
+                  "duration": 902
+                },
+                "status": "passed",
+                "steps": [
+                  {
+                    "name": "Open 'Sign Up' page",
+                    "time": {
+                      "start": 1792661160683,
+                      "stop": 1792661161081,
+                      "duration": 398
+                    },
+                    "status": "passed",
+                    "steps": [
+                      {
+                        "name": "page.goto(/user/register)",
+                        "time": {
+                          "start": 1792661160685,
+                          "stop": 1792661161081,
+                          "duration": 396
+                        },
+                        "status": "passed",
+                        "steps": [],
+                        "attachments": [],
+                        "parameters": [],
+                        "hasContent": false,
+                        "shouldDisplayMessage": false,
+                        "stepsCount": 0,
+                        "attachmentsCount": 0,
+                        "attachmentStep": false
+                      }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "hasContent": true,
+                    "shouldDisplayMessage": false,
+                    "stepsCount": 1,
+                    "attachmentsCount": 0,
+                    "attachmentStep": false
+                  },
+                  {
+                    "name": "Fill the 'Sign up' form",
+                    "time": {
+                      "start": 1792661161081,
+                      "stop": 1792661161217,
+                      "duration": 136
+                    },
+                    "status": "passed",
+                    "steps": [
+                      {
+                        "name": "Fill the 'Username' field",
+                        "time": {
+                          "start": 1792661161082,
+                          "stop": 1792661161123,
+                          "duration": 41
+                        },
+                        "status": "passed",
+                        "steps": [
+                          {
+                            "name": "locator.getByPlaceholder('Username').fill",
+                            "time": {
+                              "start": 1792661161084,
+                              "stop": 1792661161123,
+                              "duration": 39
+                            },
+                            "status": "passed",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "hasContent": false,
+                            "shouldDisplayMessage": false,
+                            "stepsCount": 0,
+                            "attachmentsCount": 0,
+                            "attachmentStep": false
+                          }
+                        ],
+                        "attachments": [],
+                        "parameters": [],
+                        "hasContent": true,
+                        "shouldDisplayMessage": false,
+                        "stepsCount": 1,
+                        "attachmentsCount": 0,
+                        "attachmentStep": false
+                      },
+                      {
+                        "name": "Fill the 'Email' field",
+                        "time": {
+                          "start": 1792661161124,
+                          "stop": 1792661161142,
+                          "duration": 18
+                        },
+                        "status": "passed",
+                        "steps": [
+                          {
+                            "name": "locator.getByPlaceholder('Email').fill",
+                            "time": {
+                              "start": 1792661161125,
+                              "stop": 1792661161142,
+                              "duration": 17
+                            },
+                            "status": "passed",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "hasContent": false,
+                            "shouldDisplayMessage": false,
+                            "stepsCount": 0,
+                            "attachmentsCount": 0,
+                            "attachmentStep": false
+                          }
+                        ],
+                        "attachments": [],
+                        "parameters": [],
+                        "hasContent": true,
+                        "shouldDisplayMessage": false,
+                        "stepsCount": 1,
+                        "attachmentsCount": 0,
+                        "attachmentStep": false
+                      },
+                      {
+                        "name": "Fill the 'Password' field",
+                        "time": {
+                          "start": 1792661161143,
+                          "stop": 1792661161163,
+                          "duration": 20
+                        },
+                        "status": "passed",
+                        "steps": [
+                          {
+                            "name": "locator.getByPlaceholder('Password').fill",
+                            "time": {
+                              "start": 1792661161145,
+                              "stop": 1792661161163,
+                              "duration": 18
+                            },
+                            "status": "passed",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "hasContent": false,
+                            "shouldDisplayMessage": false,
+                            "stepsCount": 0,
+                            "attachmentsCount": 0,
+                            "attachmentStep": false
+                          }
+                        ],
+                        "attachments": [],
+                        "parameters": [],
+                        "hasContent": true,
+                        "shouldDisplayMessage": false,
+                        "stepsCount": 1,
+                        "attachmentsCount": 0,
+                        "attachmentStep": false
+                      },
+                      {
+                        "name": "Click the 'Sign up' button",
+                        "time": {
+                          "start": 1792661161164,
+                          "stop": 1792661161217,
+                          "duration": 53
+                        },
+                        "status": "passed",
+                        "steps": [
+                          {
+                            "name": "locator.getByRole('button', { name: 'Sign up' }).click",
+                            "time": {
+                              "start": 1792661161167,
+                              "stop": 1792661161217,
+                              "duration": 50
+                            },
+                            "status": "passed",
+                            "steps": [],
+                            "attachments": [],
+                            "parameters": [],
+                            "hasContent": false,
+                            "shouldDisplayMessage": false,
+                            "stepsCount": 0,
+                            "attachmentsCount": 0,
+                            "attachmentStep": false
+                          }
+                        ],
+                        "attachments": [],
+                        "parameters": [],
+                        "hasContent": true,
+                        "shouldDisplayMessage": false,
+                        "stepsCount": 1,
+                        "attachmentsCount": 0,
+                        "attachmentStep": false
+                      }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "hasContent": true,
+                    "shouldDisplayMessage": false,
+                    "stepsCount": 8,
+                    "attachmentsCount": 0,
+                    "attachmentStep": false
+                  },
+                  {
+                    "name": "Assert the 'Your Feed' tab is visible",
+                    "time": {
+                      "start": 1792661161217,
+                      "stop": 1792661161585,
+                      "duration": 368
+                    },
+                    "status": "passed",
+                    "steps": [
+                      {
+                        "name": "expect.toBeVisible",
+                        "time": {
+                          "start": 1792661161218,
+                          "stop": 1792661161585,
+                          "duration": 367
+                        },
+                        "status": "passed",
+                        "steps": [],
+                        "attachments": [],
+                        "parameters": [],
+                        "hasContent": false,
+                        "shouldDisplayMessage": false,
+                        "stepsCount": 0,
+                        "attachmentsCount": 0,
+                        "attachmentStep": false
+                      }
+                    ],
+                    "attachments": [],
+                    "parameters": [],
+                    "hasContent": true,
+                    "shouldDisplayMessage": false,
+                    "stepsCount": 1,
+                    "attachmentsCount": 0,
+                    "attachmentStep": false
+                  }
+                ],
+                "attachments": [],
+                "parameters": [],
+                "hasContent": true,
+                "shouldDisplayMessage": false,
+                "stepsCount": 13,
+                "attachmentsCount": 0,
+                "attachmentStep": false
+              }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": true,
+            "shouldDisplayMessage": false,
+            "stepsCount": 21,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: homePage",
+            "time": {
+              "start": 1792661161585,
+              "stop": 1792661161586,
+              "duration": 1
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: createArticlePage",
+            "time": {
+              "start": 1792661161586,
+              "stop": 1792661161586,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: viewArticlePage",
+            "time": {
+              "start": 1792661161586,
+              "stop": 1792661161586,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 25,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Click the 'New Article' link",
+        "time": {
+          "start": 1792661161587,
+          "stop": 1792661161638,
+          "duration": 51
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "locator.getByRole('link', { name: 'New Article' }).click",
+            "time": {
+              "start": 1792661161588,
+              "stop": 1792661161638,
+              "duration": 50
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Fill the 'Title' field",
+        "time": {
+          "start": 1792661161639,
+          "stop": 1792661161657,
+          "duration": 18
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "locator.getByPlaceholder('Article Title').fill",
+            "time": {
+              "start": 1792661161640,
+              "stop": 1792661161656,
+              "duration": 16
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Fill the 'Description' field",
+        "time": {
+          "start": 1792661161657,
+          "stop": 1792661161673,
+          "duration": 16
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "locator.getByPlaceholder('What\\'s this article about?').fill",
+            "time": {
+              "start": 1792661161658,
+              "stop": 1792661161672,
+              "duration": 14
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Fill the 'Text' field",
+        "time": {
+          "start": 1792661161673,
+          "stop": 1792661161689,
+          "duration": 16
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "locator.getByPlaceholder('Write your article (in markdown)').fill",
+            "time": {
+              "start": 1792661161674,
+              "stop": 1792661161689,
+              "duration": 15
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Click the 'Publish Article' button",
+        "time": {
+          "start": 1792661161690,
+          "stop": 1792661161733,
+          "duration": 43
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "locator.getByRole('button', { name: 'Publish Article' }).click",
+            "time": {
+              "start": 1792661161691,
+              "stop": 1792661161733,
+              "duration": 42
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Assert the article has correct title",
+        "time": {
+          "start": 1792661161734,
+          "stop": 1792661162098,
+          "duration": 364
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "expect.toContainText",
+            "time": {
+              "start": 1792661161734,
+              "stop": 1792661162097,
+              "duration": 363
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Assert the article has correct text",
+        "time": {
+          "start": 1792661162098,
+          "stop": 1792661162105,
+          "duration": 7
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "expect.toBeVisible",
+            "time": {
+              "start": 1792661162099,
+              "stop": 1792661162105,
+              "duration": 6
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "After Hooks",
+        "time": {
+          "start": 1792661162105,
+          "stop": 1792661162193,
+          "duration": 88
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "fixture: viewArticlePage",
+            "time": {
+              "start": 1792661162106,
+              "stop": 1792661162106,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: createArticlePage",
+            "time": {
+              "start": 1792661162106,
+              "stop": 1792661162106,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: homePage",
+            "time": {
+              "start": 1792661162106,
+              "stop": 1792661162106,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: user",
+            "time": {
+              "start": 1792661162107,
+              "stop": 1792661162107,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: page",
+            "time": {
+              "start": 1792661162107,
+              "stop": 1792661162107,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: context",
+            "time": {
+              "start": 1792661162107,
+              "stop": 1792661162107,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: addAllureTestHierarchy",
+            "time": {
+              "start": 1792661162192,
+              "stop": 1792661162192,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: infoTestLog",
+            "time": {
+              "start": 1792661162193,
+              "stop": 1792661162193,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 8,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      }
+    ],
+    "attachments": [],
+    "parameters": [],
+    "hasContent": true,
+    "shouldDisplayMessage": false,
+    "stepsCount": 49,
+    "attachmentsCount": 0,
+    "attachmentStep": false
+  },
+  "afterStages": [],
+  "labels": [
+    { "name": "language", "value": "javascript" },
+    { "name": "framework", "value": "playwright" },
+    {
+      "name": "package",
+      "value": "articles.createArticle.createArticleWithRequiredFields.spec.js"
+    },
+    {
+      "name": "titlePath",
+      "value": " > chromium > articles/createArticle/createArticleWithRequiredFields.spec.js"
+    },
+    { "name": "host", "value": "MazemDevol" },
+    { "name": "thread", "value": "pid-39613-worker-0" },
+    { "name": "parentSuite", "value": "Articles" },
+    { "name": "suite", "value": "Create Article" },
+    { "name": "resultFormat", "value": "allure2" }
+  ],
+  "parameters": [{ "name": "Project", "value": "chromium" }],
+  "links": [],
+  "hidden": false,
+  "retry": false,
+  "extra": {
+    "severity": "normal",
+    "retries": [
+      {
+        "uid": "bfe8fccd1b6c2a20",
+        "status": "passed",
+        "time": {
+          "start": 1792660800990,
+          "stop": 1792660802547,
+          "duration": 1557
+        }
+      }
+    ],
+    "categories": [],
+    "tags": []
+  },
+  "source": "b9f54142242e101a.json",
+  "parameterValues": ["chromium"]
+}

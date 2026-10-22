@@ -1,0 +1,500 @@
+{
+  "uid": "6a526bf560b66fbe",
+  "name": "Sign up with empty username",
+  "fullName": "auth/signUp/signUpNegative.spec.js:9:7",
+  "time": { "start": 1792660816792, "stop": 1792660817447, "duration": 655 },
+  "status": "passed",
+  "flaky": false,
+  "newFailed": false,
+  "newBroken": false,
+  "newPassed": false,
+  "retriesCount": 0,
+  "retriesStatusChange": false,
+  "beforeStages": [],
+  "testStage": {
+    "status": "passed",
+    "steps": [
+      {
+        "name": "Before Hooks",
+        "time": {
+          "start": 1792660816792,
+          "stop": 1792660816841,
+          "duration": 49
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "fixture: infoTestLog",
+            "time": {
+              "start": 1792660816801,
+              "stop": 1792660816801,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: addAllureTestHierarchy",
+            "time": {
+              "start": 1792660816802,
+              "stop": 1792660816803,
+              "duration": 1
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: user",
+            "time": {
+              "start": 1792660816803,
+              "stop": 1792660816804,
+              "duration": 1
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: context",
+            "time": {
+              "start": 1792660816804,
+              "stop": 1792660816812,
+              "duration": 8
+            },
+            "status": "passed",
+            "steps": [
+              {
+                "name": "browser.newContext",
+                "time": {
+                  "start": 1792660816804,
+                  "stop": 1792660816809,
+                  "duration": 5
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "hasContent": false,
+                "shouldDisplayMessage": false,
+                "stepsCount": 0,
+                "attachmentsCount": 0,
+                "attachmentStep": false
+              }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": true,
+            "shouldDisplayMessage": false,
+            "stepsCount": 1,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: page",
+            "time": {
+              "start": 1792660816813,
+              "stop": 1792660816840,
+              "duration": 27
+            },
+            "status": "passed",
+            "steps": [
+              {
+                "name": "browserContext.newPage",
+                "time": {
+                  "start": 1792660816814,
+                  "stop": 1792660816840,
+                  "duration": 26
+                },
+                "status": "passed",
+                "steps": [],
+                "attachments": [],
+                "parameters": [],
+                "hasContent": false,
+                "shouldDisplayMessage": false,
+                "stepsCount": 0,
+                "attachmentsCount": 0,
+                "attachmentStep": false
+              }
+            ],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": true,
+            "shouldDisplayMessage": false,
+            "stepsCount": 1,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: signUpPage",
+            "time": {
+              "start": 1792660816841,
+              "stop": 1792660816841,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 8,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Open 'Sign Up' page",
+        "time": {
+          "start": 1792660816842,
+          "stop": 1792660817221,
+          "duration": 379
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "page.goto(/user/register)",
+            "time": {
+              "start": 1792660816843,
+              "stop": 1792660817221,
+              "duration": 378
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Fill the 'Email' field",
+        "time": {
+          "start": 1792660817221,
+          "stop": 1792660817251,
+          "duration": 30
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "locator.getByPlaceholder('Email').fill",
+            "time": {
+              "start": 1792660817222,
+              "stop": 1792660817251,
+              "duration": 29
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Fill the 'Password' field",
+        "time": {
+          "start": 1792660817252,
+          "stop": 1792660817268,
+          "duration": 16
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "locator.getByPlaceholder('Password').fill",
+            "time": {
+              "start": 1792660817253,
+              "stop": 1792660817268,
+              "duration": 15
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Click the 'Sign up' button",
+        "time": {
+          "start": 1792660817269,
+          "stop": 1792660817314,
+          "duration": 45
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "locator.getByRole('button', { name: 'Sign up' }).click",
+            "time": {
+              "start": 1792660817270,
+              "stop": 1792660817314,
+              "duration": 44
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "Assert the 'username:Username  must start with a letter, have no spaces, and be 2 - 40 characters.' error is shown",
+        "time": {
+          "start": 1792660817315,
+          "stop": 1792660817428,
+          "duration": 113
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "expect.toContainText",
+            "time": {
+              "start": 1792660817316,
+              "stop": 1792660817428,
+              "duration": 112
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 1,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      },
+      {
+        "name": "After Hooks",
+        "time": {
+          "start": 1792660817428,
+          "stop": 1792660817551,
+          "duration": 123
+        },
+        "status": "passed",
+        "steps": [
+          {
+            "name": "fixture: signUpPage",
+            "time": {
+              "start": 1792660817429,
+              "stop": 1792660817429,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: page",
+            "time": {
+              "start": 1792660817429,
+              "stop": 1792660817429,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: context",
+            "time": {
+              "start": 1792660817429,
+              "stop": 1792660817429,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: user",
+            "time": {
+              "start": 1792660817459,
+              "stop": 1792660817459,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: addAllureTestHierarchy",
+            "time": {
+              "start": 1792660817459,
+              "stop": 1792660817459,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          },
+          {
+            "name": "fixture: infoTestLog",
+            "time": {
+              "start": 1792660817459,
+              "stop": 1792660817459,
+              "duration": 0
+            },
+            "status": "passed",
+            "steps": [],
+            "attachments": [],
+            "parameters": [],
+            "hasContent": false,
+            "shouldDisplayMessage": false,
+            "stepsCount": 0,
+            "attachmentsCount": 0,
+            "attachmentStep": false
+          }
+        ],
+        "attachments": [],
+        "parameters": [],
+        "hasContent": true,
+        "shouldDisplayMessage": false,
+        "stepsCount": 6,
+        "attachmentsCount": 0,
+        "attachmentStep": false
+      }
+    ],
+    "attachments": [],
+    "parameters": [],
+    "hasContent": true,
+    "shouldDisplayMessage": false,
+    "stepsCount": 26,
+    "attachmentsCount": 0,
+    "attachmentStep": false
+  },
+  "afterStages": [],
+  "labels": [
+    { "name": "language", "value": "javascript" },
+    { "name": "framework", "value": "playwright" },
+    { "name": "package", "value": "auth.signUp.signUpNegative.spec.js" },
+    {
+      "name": "titlePath",
+      "value": " > chromium > auth/signUp/signUpNegative.spec.js > Sign up negative tests"
+    },
+    { "name": "host", "value": "MazemDevol" },
+    { "name": "thread", "value": "pid-37326-worker-0" },
+    { "name": "parentSuite", "value": "Auth" },
+    { "name": "suite", "value": "Sign Up" },
+    { "name": "subSuite", "value": "Sign up negative tests" },
+    { "name": "resultFormat", "value": "allure2" }
+  ],
+  "parameters": [{ "name": "Project", "value": "chromium" }],
+  "links": [],
+  "hidden": true,
+  "retry": true,
+  "extra": { "categories": [], "tags": [] },
+  "source": "6a526bf560b66fbe.json",
+  "parameterValues": ["chromium"]
+}
