@@ -3,6 +3,7 @@ import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
+import * as fs from 'node:fs';
 
 export const test = base.extend<
   {
@@ -13,9 +14,11 @@ export const test = base.extend<
     users;
     infoTestLog;
     addAllureTestHierarchy;
+    clearAllureResults;
   },
   {
     logger;
+    clearAllureResults;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -52,6 +55,19 @@ export const test = base.extend<
     },
     { scope: 'worker' },
   ],
+
+  clearAllureResults: [
+    async ({}, use) => {
+      const resultsDir = './allure-results';
+      if (fs.existsSync(resultsDir)) {
+        fs.rmSync(resultsDir, { recursive: true, force: true });
+      }
+
+      await use();
+    },
+    { scope: 'worker', auto: true }
+  ],
+
   infoTestLog: [
     async ({ logger }, use, testInfo) => {
       const indexOfTestSubfolderStart = testInfo.file.indexOf('/tests') + 7;

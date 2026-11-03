@@ -1,0 +1,1 @@
+export const PROFILE_PICTURE_URL = 'https://picsum.photos/100';

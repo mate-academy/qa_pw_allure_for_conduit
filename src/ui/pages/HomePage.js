@@ -23,4 +23,11 @@ export class HomePage {
       await expect(this.yourFeedTab).toBeVisible();
     });
   }
+
+  async assertSignInLinkIsVisible() {
+    await this.step(`Assert the 'Sign In' link is visible`, async () => {
+      await expect(this.page.getByRole('link', { name: 'Sign in' }))
+      .toBeVisible();
+    });
+  }
 }
