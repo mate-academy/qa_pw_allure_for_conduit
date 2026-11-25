@@ -1,8 +1,10 @@
+
 import { test as base } from '@playwright/test';
 import { Logger } from '../../src/common/logger/Logger';
 import { generateNewUserData } from '../../src/common/testData/generateNewUserData';
 import * as allure from 'allure-js-commons';
 import { parseTestTreeHierarchy } from '../../src/common/helpers/allureHelpers';
+import { rm } from 'fs/promises';
 
 export const test = base.extend<
   {
@@ -16,6 +18,7 @@ export const test = base.extend<
   },
   {
     logger;
+    deleteAllureResultsFolder;
   }
 >({
   usersNumber: [1, { option: true }],
@@ -84,4 +87,19 @@ export const test = base.extend<
     },
     { scope: 'test', auto: true },
   ],
+  deleteAllureResultsFolder: [
+    async ({ logger }, use) => {
+      const allureResultsPath = 'allure-results';
+
+      await rm(allureResultsPath, {
+        recursive: true,
+        force: true,
+      });
+      
+      logger.info('Allure results folder has been deleted');
+      
+      await use()
+    },
+    { scope: 'worker', auto: true},
+  ]
 });

@@ -6,6 +6,9 @@ export class HomePage {
     this.userId = userId;
     this.yourFeedTab = page.getByText('Your Feed');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
+    this.settingsButton = page.getByRole('link', { name : 'Settings' });
+    this.signInIcon = page.getByRole('link', { name : 'Sign in'});
+    this.signUpIcon = page.getByRole('link', { name : 'Sign up'});
   }
 
   async step(title, stepToRun) {
@@ -21,6 +24,24 @@ export class HomePage {
   async assertYourFeedTabIsVisible() {
     await this.step(`Assert the 'Your Feed' tab is visible`, async () => {
       await expect(this.yourFeedTab).toBeVisible();
+    });
+  }
+
+  async openSettings() {
+    await this.step(`Open Settings`, async() => {
+      await this.settingsButton.click();
+    });
+  }
+
+  async assertSignInIconIsVisible() {
+    await this.step(`Assert that 'Sign In' icon is visible`, async() => {
+      await expect(this.signInIcon).toBeVisible();
+    });
+  }
+
+  async assertSignUpIconIsVisible() {
+    await this.step(`Assert that 'Sign Up' icon is visible`, async() => {
+      await expect(this.signUpIcon).toBeVisible();
     });
   }
 }
